@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhivardhan Tippani | VLSI Physical Design Engineer</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        silicon: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            900: '#064e3b',
+                            cyan: '#06b6d4',
+                            darkbg: '#0b111e',
+                            cardbg: '#151f32'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-silicon-darkbg text-gray-100 font-sans antialiased">
+
+    <!-- HEADER / NAVIGATION -->
+    <nav class="sticky top-0 z-50 bg-silicon-darkbg/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <span class="text-xl font-bold tracking-wider text-silicon-cyan">AT_<span class="text-white">VLSI</span></span>
+            <div class="flex space-x-6 text-sm font-medium">
+                <a href="#about" class="hover:text-silicon-cyan transition">About</a>
+                <a href="#skills" class="hover:text-silicon-cyan transition">Skills</a>
+                <a href="#vlsi-projects" class="hover:text-silicon-cyan transition">VLSI Projects</a>
+                <a href="#software-projects" class="hover:text-silicon-cyan transition">Software Projects</a>
+                <a href="#contact" class="hover:text-silicon-cyan transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="about" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col md:flex-row items-center gap-12 border-b border-gray-800">
+        <div class="w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-silicon-cyan shadow-xl shadow-silicon-cyan/10 flex-shrink-0">
+            <!-- Referencing your profile pic file directly -->
+            <img src="ChatGPT Image May 8, 2026, 11_06_19 AM.png" alt="Abhivardhan Tippani" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-1 text-center md:text-left">
+            <span class="inline-block px-3 py-1 text-xs font-semibold tracking-widest text-silicon-cyan bg-silicon-cyan/10 rounded-full mb-3 uppercase">RTL-to-GDSII Specialist</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">Abhivardhan Tippani</h1>
+            <p class="text-xl text-gray-400 mb-6 font-medium">VLSI Physical Design Engineer</p>
+            <p class="text-gray-300 leading-relaxed max-w-2xl mb-6">
+                Hands-on experience with the RTL-to-GDSII flow utilizing Synopsys Design Compiler and ICC2 on 28nm technology nodes. Specialized in floorplanning, clock tree synthesis (CTS), routing optimization, and timing closure. 
+            </p>
+            <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                <a href="https://linkedin.com/in/abhivardhan-varma" target="_blank" class="px-5 py-2.5 bg-silicon-cyan text-silicon-darkbg font-semibold rounded-lg hover:bg-cyan-400 transition flex items-center gap-2">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/Abhigit2504" target="_blank" class="px-5 py-2.5 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-lg transition flex items-center gap-2">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="mailto:varmaabhivardhan@gmail.com" class="px-5 py-2.5 border border-gray-700 hover:border-gray-500 text-gray-300 rounded-lg transition flex items-center gap-2">
+                    <i class="fas fa-envelope"></i> Email Me
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE TECHNICAL SKILLS -->
+    <section id="skills" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-b border-gray-800">
+        <h2 class="text-2xl font-bold mb-8 text-white flex items-center gap-2">
+            <span class="w-2 h-6 bg-silicon-cyan rounded-full"></span> Technical Stack
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-silicon-cardbg p-6 rounded-xl border border-gray-800">
+                <h3 class="text-lg font-semibold text-silicon-cyan mb-4"><i class="fas fa-microchip mr-2"></i> Physical Design & EDA</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Synopsys Design Compiler (DC Shell), IC Compiler II (ICC2), Floorplanning, Macro Placement, Clock Tree Synthesis (CTS), Static Timing Analysis (STA), Timing Closure, IR/EM Verification, DRC/LVS.
+                </p>
+            </div>
+            <div class="bg-silicon-cardbg p-6 rounded-xl border border-gray-800">
+                <h3 class="text-lg font-semibold text-silicon-cyan mb-4"><i class="fas fa-code mr-2"></i> Languages & Scripting</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    TCL (Tool Command Language), C++, C, Python, JavaScript, Embedded C, MATLAB.
+                </p>
+            </div>
+            <div class="bg-silicon-cardbg p-6 rounded-xl border border-gray-800">
+                <h3 class="text-lg font-semibold text-silicon-cyan mb-4"><i class="fas fa-network-wired mr-2"></i> Web & Architectures</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    React JS, Node.js, Django, Flask, Express.js, PostgreSQL, MySQL, MongoDB, Firebase.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- VLSI HARDWARE PROJECTS -->
+    <section id="vlsi-projects" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-b border-gray-800">
+        <h2 class="text-2xl font-bold mb-4 text-white flex items-center gap-2">
+            <span class="w-2 h-6 bg-cyan-500 rounded-full"></span> VLSI & Core Engineering Projects
+        </h2>
+        <p class="text-gray-400 text-sm mb-8">Targeted chip design implementations and hardware configurations.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Project 1 -->
+            <div class="bg-silicon-cardbg rounded-xl overflow-hidden border border-gray-800 flex flex-col">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="RTL Synthesis" class="h-48 w-full object-cover opacity-80">
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold text-white mb-2">RTL Synthesis and Timing Closure</h3>
+                    <p class="text-xs text-silicon-cyan font-mono mb-4">Synopsys Design Compiler | 28nm</p>
+                    <ul class="text-sm text-gray-300 space-y-2 flex-grow list-disc list-inside">
+                        <li>Engineered RTL synthesis flow targeting 550 MHz with zero setup violations.</li>
+                        <li>Validated 20+ SDC constraints (false paths, multicycle paths, clock uncertainty).</li>
+                        <li>Reduced critical path delay by 15% via logic restructuring.</li>
+                    </ul>
+                    <a href="https://github.com/Abhigit2504" target="_blank" class="mt-6 inline-flex items-center text-xs font-semibold tracking-wider uppercase text-silicon-cyan hover:underline gap-1">View Repository <i class="fas fa-arrow-right text-[10px]"></i></a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="bg-silicon-cardbg rounded-xl overflow-hidden border border-gray-800 flex flex-col">
+                <img src="https://images.unsplash.com/photo-1601524909162-be87252be298?auto=format&fit=crop&w=800&q=80" alt="Physical Design" class="h-48 w-full object-cover opacity-80">
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold text-white mb-2">Physical Design & RTL-to-GDSII Implementation</h3>
+                    <p class="text-xs text-silicon-cyan font-mono mb-4">Synopsys ICC2 | 28nm Technology</p>
+                    <ul class="text-sm text-gray-300 space-y-2 flex-grow list-disc list-inside">
+                        <li>Executed full flow: macro placement, power rings/straps, CTS, and detailed routing.</li>
+                        <li>Mitigated routing congestion hotspots by 30% through optimized channel spacing.</li>
+                        <li>Integrated tap, filler, decap, and boundary cells ensuring DRC-clean signoff.</li>
+                    </ul>
+                    <a href="https://github.com/Abhigit2504" target="_blank" class="mt-6 inline-flex items-center text-xs font-semibold tracking-wider uppercase text-silicon-cyan hover:underline gap-1">View Flow Details <i class="fas fa-arrow-right text-[10px]"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPREHENSIVE SOFTWARE & IOT PROJECTS -->
+    <section id="software-projects" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 class="text-2xl font-bold mb-4 text-white flex items-center gap-2">
+            <span class="w-2 h-6 bg-emerald-500 rounded-full"></span> Systems & Software Projects
+        </h2>
+        <p class="text-gray-400 text-sm mb-8">Full-stack, Embedded Systems, and IoT solutions from multi-domain architectures.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Heavy Machinery -->
+            <div class="bg-silicon-cardbg p-5 rounded-xl border border-gray-800 flex flex-col justify-between">
+                <div>
+                    <h3 class="font-bold text-lg text-white mb-1">Heavy Machinery Monitoring</h3>
+                    <span class="text-xs font-mono text-emerald-400 block mb-3">React Native / Django / Postgres</span>
+                    <p class="text-sm text-gray-400">Real-time industrial IoT monitoring platform syncing live telemetry with 99% accuracy and 30% reduction in response latency.</p>
+                </div>
+                <a href="https://github.com/Abhigit2504" target="_blank" class="text-xs text-silicon-cyan mt-4 inline-block hover:underline">Source Code &rarr;</a>
+            </div>
+
+            <!-- SEMG Sensor -->
+            <div class="bg-silicon-cardbg p-5 rounded-xl border border-gray-800 flex flex-col justify-between">
+                <div>
+                    <h3 class="font-bold text-lg text-white mb-1">sEMG Gesture-Controlled IoT</h3>
+                    <span class="text-xs font-mono text-emerald-400 block mb-3">Embedded / Signals / IoT</span>
+                    <p class="text-sm text-gray-400">Engineered an interface utilizing sEMG sensors achieving a 95% accuracy rate in muscle signal classification and automated control.</p>
+                </div>
+                <a href="https://github.com/Abhigit2504" target="_blank" class="text-xs text-silicon-cyan mt-4 inline-block hover:underline">Source Code &rarr;</a>
+            </div>
+
+            <!-- Make Your Basket -->
+            <div class="bg-silicon-cardbg p-5 rounded-xl border border-gray-800 flex flex-col justify-between">
+                <div>
+                    <h3 class="font-bold text-lg text-white mb-1">Make Your Basket</h3>
+                    <span class="text-xs font-mono text-emerald-400 block mb-3">MERN Stack / MySQL</span>
+                    <p class="text-sm text-gray-400">Scalable e-commerce engine processing 50 orders/min. Integrated JWT authentication and achieved 98% basket completion.</p>
+                </div>
+                <a href="https://github.com/Abhigit2504" target="_blank" class="text-xs text-silicon-cyan mt-4 inline-block hover:underline">Source Code &rarr;</a>
+            </div>
+
+            <!-- JobDone -->
+            <div class="bg-silicon-cardbg p-5 rounded-xl border border-gray-800 flex flex-col justify-between">
+                <div>
+                    <h3 class="font-bold text-lg text-white mb-1">JobDone Portal</h3>
+                    <span class="text-xs font-mono text-emerald-400 block mb-3">MongoDB / Express / React / Node</span>
+                    <p class="text-sm text-gray-400">A full-stack job application hub featuring resume processing workflows, centralized error layers, and role-based validation mapping.</p>
+                </div>
+                <a href="https://github.com/Abhigit2504" target="_blank" class="text-xs text-silicon-cyan mt-4 inline-block hover:underline">Source Code &rarr;</a>
+            </div>
+
+            <!-- Water Quality -->
+            <div class="bg-silicon-cardbg p-5 rounded-xl border border-gray-800 flex flex-col justify-between">
+                <div>
+                    <h3 class="font-bold text-lg text-white mb-1">Water Quality Tracker</h3>
+                    <span class="text-xs font-mono text-emerald-400 block mb-3">Embedded C++ / I2C / Sensors</span>
+                    <p class="text-sm text-gray-400">Deployed dynamic automated alert mechanisms for pH and Dissolved Oxygen metrics, driving a 20% reduction in water waste indicators.</p>
+                </div>
+                <a href="https://github.com/Abhigit2504" target="_blank" class="text-xs text-silicon-cyan mt-4 inline-block hover:underline">Source Code &rarr;</a>
+            </div>
+
+            <!-- Blood Donation -->
+            <div class="bg-silicon-cardbg p-5 rounded-xl border border-gray-800 flex flex-col justify-between">
+                <div>
+                    <h3 class="font-bold text-lg text-white mb-1">Blood Donation Tracker</h3>
+                    <span class="text-xs font-mono text-emerald-400 block mb-3">OOP / System Design / C++</span>
+                    <p class="text-sm text-gray-400">CLI-driven transactional database structure organizing donor-patient file maps through object-oriented streams safely.</p>
+                </div>
+                <a href="https://github.com/Abhigit2504" target="_blank" class="text-xs text-silicon-cyan mt-4 inline-block hover:underline">Source Code &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / CONTACT CONTACT -->
+    <footer id="contact" class="bg-black/40 border-t border-gray-800 mt-20 py-12 text-center text-gray-500 text-sm">
+        <div class="max-w-6xl mx-auto px-4 space-y-4">
+            <p class="text-gray-300 font-medium">Looking for Physical Design Opportunities in VLSI</p>
+            <div class="flex justify-center space-x-6 text-lg text-gray-400">
+                <a href="mailto:varmaabhivardhan@gmail.com" class="hover:text-white"><i class="fas fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/abhivardhan-varma" target="_blank" class="hover:text-white"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Abhigit2504" target="_blank" class="hover:text-white"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2026 Abhivardhan Tippani. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
