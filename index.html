@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -31,6 +32,7 @@
         }
     </script>
     <style>
+        /* premium glass with both light/dark support */
         .premium-glass {
             background: linear-gradient(145deg, rgba(11, 19, 41, 0.9) 0%, rgba(3, 7, 18, 0.95) 100%);
             border: 1px solid rgba(6, 182, 212, 0.12);
@@ -41,6 +43,18 @@
         .premium-glass:hover {
             border-color: rgba(6, 182, 212, 0.6);
             box-shadow: 0 0 35px rgba(6, 182, 212, 0.25);
+            transform: translateY(-6px) scale(1.01);
+        }
+        .premium-glass-light {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.92) 0%, rgba(240, 248, 255, 0.95) 100%);
+            border: 1px solid rgba(6, 182, 212, 0.25);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(16px);
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .premium-glass-light:hover {
+            border-color: rgba(6, 182, 212, 0.7);
+            box-shadow: 0 0 35px rgba(6, 182, 212, 0.15);
             transform: translateY(-6px) scale(1.01);
         }
         .skill-badge {
@@ -54,6 +68,18 @@
             color: #ffffff;
             box-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
         }
+        .skill-badge-light {
+            background: rgba(6, 182, 212, 0.08);
+            border: 1px solid rgba(6, 182, 212, 0.25);
+            transition: all 0.3s ease;
+            color: #0b1329;
+        }
+        .skill-badge-light:hover {
+            background: rgba(6, 182, 212, 0.2);
+            border-color: #06b6d4;
+            color: #030712;
+            box-shadow: 0 0 10px rgba(6, 182, 212, 0.25);
+        }
         .neon-glow-text {
             text-shadow: 0 0 12px rgba(6, 182, 212, 0.5);
         }
@@ -64,35 +90,87 @@
             background-color: #06b6d4;
             box-shadow: 0 0 8px #06b6d4;
         }
+        /* smooth theme transition */
+        * {
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease, box-shadow 0.3s ease;
+        }
+        .theme-toggle {
+            cursor: pointer;
+            width: 44px;
+            height: 44px;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            transition: all 0.3s ease;
+        }
+        .theme-toggle:hover {
+            background: rgba(6, 182, 212, 0.2);
+            transform: scale(1.05);
+        }
+        .theme-toggle-light {
+            background: rgba(6, 182, 212, 0.15);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+        }
+        .theme-toggle-light:hover {
+            background: rgba(6, 182, 212, 0.25);
+        }
+        .card-soft {
+            border-radius: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .project-card-dark {
+            background: rgba(11, 19, 41, 0.6);
+            border: 1px solid rgba(30, 41, 59, 0.7);
+        }
+        .project-card-light {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(203, 213, 225, 0.6);
+        }
+        .project-card-dark:hover {
+            border-color: rgba(6, 182, 212, 0.4);
+            box-shadow: 0 0 30px rgba(6, 182, 212, 0.08);
+        }
+        .project-card-light:hover {
+            border-color: rgba(6, 182, 212, 0.5);
+            box-shadow: 0 0 30px rgba(6, 182, 212, 0.12);
+        }
     </style>
 </head>
-<body class="bg-silicon-darkbg text-gray-100 font-sans antialiased selection:bg-cyan-500/30 selection:text-white">
+<body class="bg-silicon-darkbg text-gray-100 font-sans antialiased selection:bg-cyan-500/30 selection:text-white dark:bg-silicon-darkbg dark:text-gray-100 bg-gray-50 text-gray-800 transition-colors duration-300">
 
     <!-- HEADER / NAVIGATION -->
-    <nav class="sticky top-0 z-40 bg-silicon-darkbg/80 backdrop-blur-xl border-b border-gray-800/80 shadow-2xl">
+    <nav class="sticky top-0 z-40 bg-silicon-darkbg/80 backdrop-blur-xl border-b border-gray-800/80 shadow-2xl dark:bg-silicon-darkbg/80 dark:border-gray-800/80 bg-white/80 border-gray-200/80 shadow-lg transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Overhaul -->
+            <!-- Brand -->
             <div class="flex items-center gap-4">
                 <div class="flex flex-col">
-                    <span class="text-lg font-mono font-black tracking-[0.25em] text-white">AT<span class="text-silicon-cyan neon-glow-text">//PD-VLSI</span></span>
-                    
+                    <span class="text-lg font-mono font-black tracking-[0.25em] text-white dark:text-white text-silicon-darkbg">AT<span class="text-silicon-cyan neon-glow-text">//PD-VLSI</span></span>
                 </div>
                 <div class="flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded-full">
                     <span class="w-1.5 h-1.5 rounded-full bg-silicon-matrixGreen animate-ping"></span>
                     <span class="text-[9px] font-mono text-emerald-400 font-bold uppercase tracking-wider">OPEN TO WORK</span>
                 </div>
             </div>
-            <div class="flex space-x-6 text-xs font-mono tracking-wider uppercase">
-                <a href="#about" class="text-gray-400 hover:text-silicon-cyan transition-colors">About</a>
-                <a href="#skills" class="text-gray-400 hover:text-silicon-cyan transition-colors">Specifications</a>
-                <a href="#vlsi-projects" class="text-gray-400 hover:text-silicon-cyan transition-colors">Silicon Core</a>
-                <a href="#software-projects" class="text-gray-400 hover:text-silicon-cyan transition-colors">Software Layout</a>
+            <div class="flex items-center gap-4">
+                <div class="flex space-x-6 text-xs font-mono tracking-wider uppercase">
+                    <a href="#about" class="text-gray-400 dark:text-gray-400 hover:text-silicon-cyan transition-colors">About</a>
+                    <a href="#skills" class="text-gray-400 dark:text-gray-400 hover:text-silicon-cyan transition-colors">Specifications</a>
+                    <a href="#vlsi-projects" class="text-gray-400 dark:text-gray-400 hover:text-silicon-cyan transition-colors">Silicon Core</a>
+                    <a href="#software-projects" class="text-gray-400 dark:text-gray-400 hover:text-silicon-cyan transition-colors">Software Layout</a>
+                </div>
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="theme-toggle dark:theme-toggle-light" aria-label="Toggle theme">
+                    <i id="theme-icon" class="fas fa-moon text-silicon-cyan dark:text-silicon-cyan text-lg"></i>
+                </button>
             </div>
         </div>
     </nav>
 
     <!-- HERO & EDUCATION SECTION -->
-    <section id="about" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col lg:flex-row items-center gap-14 border-b border-gray-900/60 relative">
+    <section id="about" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col lg:flex-row items-center gap-14 border-b border-gray-900/60 dark:border-gray-900/60 border-gray-200/60 relative">
         <div class="relative group flex-shrink-0">
             <div class="absolute -inset-1.5 bg-gradient-to-r from-silicon-cyan to-blue-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
             <div class="w-52 h-52 md:w-60 md:h-60 rounded-2xl overflow-hidden border border-silicon-cyan/40 bg-slate-900 relative z-10 shadow-2xl">
@@ -102,28 +180,27 @@
         </div>
         
         <div class="flex-1 text-center lg:text-left z-10">
-            
-            <h1 class="text-4xl md:text-5xl font-black tracking-tight text-white mb-2">Abhivardhan Tippani</h1>
+            <h1 class="text-4xl md:text-5xl font-black tracking-tight text-white dark:text-white text-silicon-darkbg mb-2">Abhivardhan Tippani</h1>
             <span class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono tracking-widest text-silicon-cyan bg-silicon-cyan/10 rounded-full mb-4 uppercase border border-silicon-cyan/30">
                 <i class="fas fa-layer-group text-[10px] animate-pulse"></i> RTL-to-GDSII Physical Design
             </span>
-            <p class="text-gray-400 leading-relaxed max-w-2xl mb-8 text-sm md:text-base">
+            <p class="text-gray-400 dark:text-gray-400 text-gray-600 leading-relaxed max-w-2xl mb-8 text-sm md:text-base">
                 Specialized in complete RTL-to-GDSII engineering workflows, macro floorplanning, placement optimization, clock tree synthesis (CTS), static timing analysis closure parameters, and clean hardware tape-out signing frameworks.
             </p>
             
             <!-- EDUCATION BLOCK -->
-            <div class="mb-8 p-4 rounded-xl bg-slate-900/60 border border-gray-800/80 inline-flex flex-col sm:flex-row items-start sm:items-center gap-4 text-left max-w-xl shadow-inner relative group overflow-hidden">
+            <div class="mb-8 p-4 rounded-xl bg-slate-900/60 dark:bg-slate-900/60 bg-white/70 border border-gray-800/80 dark:border-gray-800/80 border-gray-200/80 inline-flex flex-col sm:flex-row items-start sm:items-center gap-4 text-left max-w-xl shadow-inner relative group overflow-hidden">
                 <div class="absolute top-0 left-0 w-1 h-full bg-silicon-cyan"></div>
                 <div class="p-3 rounded-lg bg-silicon-cyan/10 text-silicon-cyan shadow-sm">
                     <i class="fas fa-graduation-cap text-xl"></i>
                 </div>
                 <div>
-                    <h4 class="text-sm font-bold text-white tracking-wide">Indian Institute of Information Technology, Sri City</h4>
+                    <h4 class="text-sm font-bold text-white dark:text-white text-silicon-darkbg tracking-wide">Indian Institute of Information Technology, Sri City</h4>
                     <p class="text-xs text-silicon-cyan font-mono mt-0.5">B.Tech in Electronics and Communication Engineering</p>
                     <p class="text-[10px] text-gray-500 font-mono mt-1 uppercase tracking-wider"><i class="far fa-calendar-alt mr-1"></i> Dec 2021 - Aug 2025</p>
                 </div>
                 <div>
-                    <h4 class="text-sm font-bold text-white tracking-wide">Trained & Certified in Physical Design</h4>
+                    <h4 class="text-sm font-bold text-white dark:text-white text-silicon-darkbg tracking-wide">Trained & Certified in Physical Design</h4>
                     <p class="text-xs text-silicon-cyan font-mono mt-0.5">Sumedha IT ,Hyderabad</p>
                     <p class="text-[10px] text-gray-500 font-mono mt-1 uppercase tracking-wider"><i class="far fa-calendar-alt mr-1"></i>Sept 2025 - Aug 2026</p>
                 </div>
@@ -133,22 +210,20 @@
                 <a href="https://www.linkedin.com/in/abhivardhan-tippeni-1308b4319" target="_blank" class="px-6 py-3 bg-silicon-cyan text-silicon-darkbg font-bold rounded-lg hover:bg-cyan-400 transition flex items-center gap-2 shadow-xl shadow-silicon-cyan/20">
                     <i class="fab fa-linkedin-in"></i> LinkedIn Connect
                 </a>
-                <a href="https://github.com/Abhigit2504" target="_blank" class="px-6 py-3 bg-gray-900 hover:bg-gray-800 border border-gray-800 text-white font-bold rounded-lg transition flex items-center gap-2">
+                <a href="https://github.com/Abhigit2504" target="_blank" class="px-6 py-3 bg-gray-900 dark:bg-gray-900 bg-gray-200 hover:bg-gray-800 dark:hover:bg-gray-800 border border-gray-800 dark:border-gray-800 border-gray-300 text-white dark:text-white text-silicon-darkbg font-bold rounded-lg transition flex items-center gap-2">
                     <i class="fab fa-github"></i> Repository
                 </a>
-                <a href="mailto:varmaabhivardhan@gmail.com"
-   class="px-6 py-3 border border-gray-800 hover:border-gray-700 text-gray-400 hover:text-white rounded-lg transition flex items-center gap-2">
-   <i class="fas fa-envelope"></i>
-   mail
-</a>
+                <a href="mailto:varmaabhivardhan@gmail.com" class="px-6 py-3 border border-gray-800 dark:border-gray-800 border-gray-300 hover:border-gray-700 dark:hover:border-gray-700 text-gray-400 dark:text-gray-400 text-gray-600 hover:text-white dark:hover:text-white rounded-lg transition flex items-center gap-2">
+                    <i class="fas fa-envelope"></i> mail
+                </a>
             </div>
         </div>
     </section>
 
     <!-- CORE TECHNICAL SPECIFICATIONS / SKILLS MATRIX -->
-    <section id="skills" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-gray-900/60 relative">
+    <section id="skills" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-gray-900/60 dark:border-gray-900/60 border-gray-200/60 relative">
         <div class="mb-12">
-            <h2 class="text-2xl font-extrabold text-white flex items-center gap-3 tracking-wide">
+            <h2 class="text-2xl font-extrabold text-white dark:text-white text-silicon-darkbg flex items-center gap-3 tracking-wide">
                 <span class="w-1.5 h-6 bg-silicon-cyan rounded-full shadow-lg shadow-silicon-cyan/50"></span> Technical Specifications Engine
             </h2>
             <p class="text-xs text-gray-500 font-mono mt-1 uppercase tracking-widest">Validated Skill Matrices Configured for Direct ATS Parsing</p>
@@ -156,84 +231,83 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <!-- Premium Category 1: Physical Design -->
-            <div class="premium-glass p-6 rounded-2xl relative overflow-hidden group flex flex-col justify-between">
+            <div class="premium-glass dark:premium-glass premium-glass-light p-6 rounded-2xl relative overflow-hidden group flex flex-col justify-between">
                 <div class="hardware-accent top-0 left-0"></div><div class="hardware-accent top-0 right-0"></div>
                 <div>
                     <div class="flex items-center gap-3 mb-4">
                         <div class="w-9 h-9 rounded-xl bg-silicon-cyan/10 flex items-center justify-center text-silicon-cyan border border-silicon-cyan/20">
                             <i class="fas fa-microchip text-sm"></i>
                         </div>
-                        <h3 class="text-sm font-bold text-white uppercase tracking-wider font-mono">Physical Design</h3>
+                        <h3 class="text-sm font-bold text-white dark:text-white text-silicon-darkbg uppercase tracking-wider font-mono">Physical Design</h3>
                     </div>
                     <div class="flex flex-wrap gap-1.5">
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded text-gray-300">Floorplanning</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded text-gray-300">Macro Placement</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded text-gray-300">CTS Network</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded text-gray-300">Detailed Routing</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded text-gray-300">Congestion Mitigation</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded text-gray-300">STA Signoff</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded text-gray-300">ECO Frameworks</span>
+                        <span class="skill-badge dark:skill-badge skill-badge-light text-[10px] font-mono px-2 py-0.5 rounded text-gray-300 dark:text-gray-300 text-gray-700">Floorplanning</span>
+                        <span class="skill-badge dark:skill-badge skill-badge-light text-[10px] font-mono px-2 py-0.5 rounded text-gray-300 dark:text-gray-300 text-gray-700">Macro Placement</span>
+                        <span class="skill-badge dark:skill-badge skill-badge-light text-[10px] font-mono px-2 py-0.5 rounded text-gray-300 dark:text-gray-300 text-gray-700">CTS Network</span>
+                        <span class="skill-badge dark:skill-badge skill-badge-light text-[10px] font-mono px-2 py-0.5 rounded text-gray-300 dark:text-gray-300 text-gray-700">Detailed Routing</span>
+                        <span class="skill-badge dark:skill-badge skill-badge-light text-[10px] font-mono px-2 py-0.5 rounded text-gray-300 dark:text-gray-300 text-gray-700">Congestion Mitigation</span>
+                        <span class="skill-badge dark:skill-badge skill-badge-light text-[10px] font-mono px-2 py-0.5 rounded text-gray-300 dark:text-gray-300 text-gray-700">STA Signoff</span>
+                        <span class="skill-badge dark:skill-badge skill-badge-light text-[10px] font-mono px-2 py-0.5 rounded text-gray-300 dark:text-gray-300 text-gray-700">ECO Frameworks</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Premium Category 2: Physical Verification (NEWLY HIGHLIGHTED COMPETENCY) -->
-            <div class="premium-glass p-6 rounded-2xl relative overflow-hidden group flex flex-col justify-between border-cyan-500/30 shadow-lg shadow-cyan-500/5">
+            <!-- Premium Category 2: Physical Verification -->
+            <div class="premium-glass dark:premium-glass premium-glass-light p-6 rounded-2xl relative overflow-hidden group flex flex-col justify-between border-cyan-500/30 shadow-lg shadow-cyan-500/5">
                 <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
                 <div>
                     <div class="flex items-center gap-3 mb-4">
                         <div class="w-9 h-9 rounded-xl bg-cyan-400/20 flex items-center justify-center text-cyan-400 border border-cyan-400/40 shadow-sm animate-pulse">
                             <i class="fas fa-shield-virus text-sm"></i>
                         </div>
-                        <h3 class="text-sm font-bold text-white uppercase tracking-wider font-mono">Physical Verification</h3>
+                        <h3 class="text-sm font-bold text-white dark:text-white text-silicon-darkbg uppercase tracking-wider font-mono">Physical Verification</h3>
                     </div>
                     <div class="flex flex-wrap gap-1.5">
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded text-cyan-300 border-cyan-500/30 font-bold">DRC Signoff</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded text-cyan-300 border-cyan-500/30 font-bold">LVS Matching</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded text-gray-300">ERC Validation</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded text-gray-300">Antenna Checks</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded text-gray-300">IR-Drop Reliability</span>
-       
+                        <span class="skill-badge dark:skill-badge skill-badge-light text-[10px] font-mono px-2 py-0.5 rounded text-cyan-300 dark:text-cyan-300 text-cyan-700 border-cyan-500/30 font-bold">DRC Signoff</span>
+                        <span class="skill-badge dark:skill-badge skill-badge-light text-[10px] font-mono px-2 py-0.5 rounded text-cyan-300 dark:text-cyan-300 text-cyan-700 border-cyan-500/30 font-bold">LVS Matching</span>
+                        <span class="skill-badge dark:skill-badge skill-badge-light text-[10px] font-mono px-2 py-0.5 rounded text-gray-300 dark:text-gray-300 text-gray-700">ERC Validation</span>
+                        <span class="skill-badge dark:skill-badge skill-badge-light text-[10px] font-mono px-2 py-0.5 rounded text-gray-300 dark:text-gray-300 text-gray-700">Antenna Checks</span>
+                        <span class="skill-badge dark:skill-badge skill-badge-light text-[10px] font-mono px-2 py-0.5 rounded text-gray-300 dark:text-gray-300 text-gray-700">IR-Drop Reliability</span>
                     </div>
                 </div>
             </div>
 
             <!-- Premium Category 3: EDA Infrastructure -->
-            <div class="premium-glass p-6 rounded-2xl relative overflow-hidden group flex flex-col justify-between">
+            <div class="premium-glass dark:premium-glass premium-glass-light p-6 rounded-2xl relative overflow-hidden group flex flex-col justify-between">
                 <div class="hardware-accent bottom-0 left-0"></div><div class="hardware-accent bottom-0 right-0"></div>
                 <div>
                     <div class="flex items-center gap-3 mb-4">
                         <div class="w-9 h-9 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 border border-amber-500/20">
                             <i class="fas fa-terminal text-sm"></i>
                         </div>
-                        <h3 class="text-sm font-bold text-white uppercase tracking-wider font-mono">EDA & Automation</h3>
+                        <h3 class="text-sm font-bold text-white dark:text-white text-silicon-darkbg uppercase tracking-wider font-mono">EDA & Automation</h3>
                     </div>
                     <div class="flex flex-wrap gap-1.5">
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded text-gray-300">Synopsys ICC2</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded text-gray-300">Design Compiler</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded text-gray-300">DC Shell Env</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded text-gray-300">TCL Architecture</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded text-gray-300">Python Scripting</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded text-gray-300">LTspice / Cadence</span>
+                        <span class="skill-badge dark:skill-badge skill-badge-light text-[10px] font-mono px-2 py-0.5 rounded text-gray-300 dark:text-gray-300 text-gray-700">Synopsys ICC2</span>
+                        <span class="skill-badge dark:skill-badge skill-badge-light text-[10px] font-mono px-2 py-0.5 rounded text-gray-300 dark:text-gray-300 text-gray-700">Design Compiler</span>
+                        <span class="skill-badge dark:skill-badge skill-badge-light text-[10px] font-mono px-2 py-0.5 rounded text-gray-300 dark:text-gray-300 text-gray-700">DC Shell Env</span>
+                        <span class="skill-badge dark:skill-badge skill-badge-light text-[10px] font-mono px-2 py-0.5 rounded text-gray-300 dark:text-gray-300 text-gray-700">TCL Architecture</span>
+                        <span class="skill-badge dark:skill-badge skill-badge-light text-[10px] font-mono px-2 py-0.5 rounded text-gray-300 dark:text-gray-300 text-gray-700">Python Scripting</span>
+                        <span class="skill-badge dark:skill-badge skill-badge-light text-[10px] font-mono px-2 py-0.5 rounded text-gray-300 dark:text-gray-300 text-gray-700">LTspice / Cadence</span>
                     </div>
                 </div>
             </div>
 
             <!-- Premium Category 4: Software Layout -->
-            <div class="premium-glass p-6 rounded-2xl relative overflow-hidden group flex flex-col justify-between">
+            <div class="premium-glass dark:premium-glass premium-glass-light p-6 rounded-2xl relative overflow-hidden group flex flex-col justify-between">
                 <div>
                     <div class="flex items-center gap-3 mb-4">
                         <div class="w-9 h-9 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 border border-purple-500/20">
                             <i class="fas fa-network-wired text-sm"></i>
                         </div>
-                        <h3 class="text-sm font-bold text-white uppercase tracking-wider font-mono">Systems & Software</h3>
+                        <h3 class="text-sm font-bold text-white dark:text-white text-silicon-darkbg uppercase tracking-wider font-mono">Systems & Software</h3>
                     </div>
                     <div class="flex flex-wrap gap-1.5">
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded text-gray-300">Full-Stack MERN</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded text-gray-300">Django Engines</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded text-gray-300">MySQL / MongoDB</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded text-gray-300">C++ Programming</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded text-gray-300">Embedded Firmware</span>
+                        <span class="skill-badge dark:skill-badge skill-badge-light text-[10px] font-mono px-2 py-0.5 rounded text-gray-300 dark:text-gray-300 text-gray-700">Full-Stack MERN</span>
+                        <span class="skill-badge dark:skill-badge skill-badge-light text-[10px] font-mono px-2 py-0.5 rounded text-gray-300 dark:text-gray-300 text-gray-700">Django Engines</span>
+                        <span class="skill-badge dark:skill-badge skill-badge-light text-[10px] font-mono px-2 py-0.5 rounded text-gray-300 dark:text-gray-300 text-gray-700">MySQL / MongoDB</span>
+                        <span class="skill-badge dark:skill-badge skill-badge-light text-[10px] font-mono px-2 py-0.5 rounded text-gray-300 dark:text-gray-300 text-gray-700">C++ Programming</span>
+                        <span class="skill-badge dark:skill-badge skill-badge-light text-[10px] font-mono px-2 py-0.5 rounded text-gray-300 dark:text-gray-300 text-gray-700">Embedded Firmware</span>
                     </div>
                 </div>
             </div>
@@ -241,24 +315,24 @@
     </section>
 
     <!-- VLSI HARDWARE PROJECTS WITH PORTAL TELEMETRY MODALS -->
-    <section id="vlsi-projects" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-gray-900/60">
+    <section id="vlsi-projects" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-gray-900/60 dark:border-gray-900/60 border-gray-200/60">
         <div class="mb-12">
-            <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+            <h2 class="text-2xl font-bold text-white dark:text-white text-silicon-darkbg flex items-center gap-3">
                 <span class="w-1.5 h-6 bg-cyan-500 rounded-full"></span> VLSI Silicon Engineering Implementations
             </h2>
             <p class="text-xs text-gray-500 font-mono mt-1 uppercase tracking-widest">Interactive Topologies // Click to Expand Real Silicon Measurement Metrics</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- VLSI Project 1: i gauana (new from resume) -->
-            <div class="premium-glass rounded-2xl overflow-hidden p-6 relative group flex flex-col justify-between bg-slate-950/40 border-cyan-500/30 shadow-lg shadow-cyan-500/10">
+            <!-- VLSI Project 1: i gauana -->
+            <div class="project-card-dark dark:project-card-dark project-card-light rounded-2xl overflow-hidden p-6 relative group flex flex-col justify-between transition-all duration-300">
                 <div>
                     <div class="flex justify-between items-center mb-4">
                         <span class="text-[10px] font-mono uppercase tracking-widest bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-md border border-cyan-500/20 font-bold">ICC2 • 28nm</span>
                         <div class="w-2 h-2 rounded-full bg-cyan-400 shadow-sm animate-pulse"></div>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3 tracking-wide">i gauana — Physical Design Implementation</h3>
-                    <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                    <h3 class="text-xl font-bold text-white dark:text-white text-silicon-darkbg mb-3 tracking-wide">i gauana — Physical Design Implementation</h3>
+                    <p class="text-xs text-gray-400 dark:text-gray-400 text-gray-600 leading-relaxed mb-4">
                         353K-gate block, 32 macros, 6 primary clocks + 2 generated clocks @ 91 MHz. Full RTL-to-GDSII implementation with SDC validation, DRV fixes, CTS, STA, and clean DRC/LVS signoff.
                     </p>
                     <div class="flex gap-2 text-[10px] font-mono text-gray-500 flex-wrap">
@@ -275,14 +349,14 @@
             </div>
 
             <!-- VLSI Project 2: RTL Synthesis & Timing Closure -->
-            <div class="premium-glass rounded-2xl overflow-hidden p-6 relative group flex flex-col justify-between bg-slate-950/40">
+            <div class="project-card-dark dark:project-card-dark project-card-light rounded-2xl overflow-hidden p-6 relative group flex flex-col justify-between transition-all duration-300">
                 <div>
                     <div class="flex justify-between items-center mb-4">
                         <span class="text-[10px] font-mono uppercase tracking-widest bg-cyan-500/10 text-silicon-cyan px-3 py-1 rounded-md border border-cyan-500/20 font-bold">Synopsys Dc_Shell</span>
                         <div class="w-2 h-2 rounded-full bg-cyan-400 shadow-sm animate-pulse"></div>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3 tracking-wide">RTL Synthesis & Timing Closure</h3>
-                    <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                    <h3 class="text-xl font-bold text-white dark:text-white text-silicon-darkbg mb-3 tracking-wide">RTL Synthesis & Timing Closure</h3>
+                    <p class="text-xs text-gray-400 dark:text-gray-400 text-gray-600 leading-relaxed mb-4">
                         Performed professional synthesis runs translating architectural RTL targets directly into precise, logic-gate libraries operating over 28nm silicon footprints seamlessly.
                     </p>
                     <div class="flex gap-2 text-[10px] font-mono text-gray-500">
@@ -296,15 +370,15 @@
                 </button>
             </div>
 
-            <!-- VLSI Project 3: Physical Design & RTL-to-GDSII (original PD project) -->
-            <div class="premium-glass rounded-2xl overflow-hidden p-6 relative group flex flex-col justify-between bg-slate-950/40 md:col-span-2">
+            <!-- VLSI Project 3: Physical Design & RTL-to-GDSII -->
+            <div class="project-card-dark dark:project-card-dark project-card-light rounded-2xl overflow-hidden p-6 relative group flex flex-col justify-between transition-all duration-300 md:col-span-2">
                 <div>
                     <div class="flex justify-between items-center mb-4">
                         <span class="text-[10px] font-mono uppercase tracking-widest bg-blue-500/10 text-blue-400 px-3 py-1 rounded-md border border-blue-500/20 font-bold">Synopsys Dc_shell ICC2</span>
                         <div class="w-2 h-2 rounded-full bg-blue-400 shadow-sm animate-pulse"></div>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3 tracking-wide">Physical Design & RTL-to-GDSII Implementation</h3>
-                    <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                    <h3 class="text-xl font-bold text-white dark:text-white text-silicon-darkbg mb-3 tracking-wide">Physical Design & RTL-to-GDSII Implementation</h3>
+                    <p class="text-xs text-gray-400 dark:text-gray-400 text-gray-600 leading-relaxed mb-4">
                         Executed comprehensive hardware implementation layouts managing floorplan footprints, standard cell configurations, balanced CTS distributions, and signoff readiness checks.
                     </p>
                     <div class="flex gap-2 text-[10px] font-mono text-gray-500">
@@ -323,7 +397,7 @@
     <!-- WEB DEVELOPMENT & SYSTEMS PROJECTS -->
     <section id="software-projects" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div class="mb-12">
-            <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+            <h2 class="text-2xl font-bold text-white dark:text-white text-silicon-darkbg flex items-center gap-3">
                 <span class="w-1.5 h-6 bg-emerald-500 rounded-full"></span> Full-Stack Software Systems Engineering
             </h2>
             <p class="text-xs text-gray-500 font-mono mt-1 uppercase tracking-widest">Secondary Development Deployments Stack</p>
@@ -331,82 +405,82 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Make Your Basket -->
-            <div class="bg-silicon-cardbg border border-gray-800/80 p-5 rounded-2xl flex flex-col justify-between hover:border-emerald-500/30 transition-all duration-300 shadow-xl">
+            <div class="project-card-dark dark:project-card-dark project-card-light p-5 rounded-2xl flex flex-col justify-between transition-all duration-300">
                 <div>
-                    <h3 class="font-bold text-white text-base">Make Your Basket</h3>
+                    <h3 class="font-bold text-white dark:text-white text-silicon-darkbg text-base">Make Your Basket</h3>
                     <span class="text-xs font-mono text-emerald-400 block mt-0.5 mb-3">MERN Stack / MySQL Engine</span>
-                    <p class="text-xs text-gray-400 leading-relaxed">Constructed e-commerce database transaction logic balancing peak execution scaling of 50 orders/min while locking profiles using JWT components safely.</p>
+                    <p class="text-xs text-gray-400 dark:text-gray-400 text-gray-600 leading-relaxed">Constructed e-commerce database transaction logic balancing peak execution scaling of 50 orders/min while locking profiles using JWT components safely.</p>
                 </div>
-                <div class="grid grid-cols-2 gap-2 mt-5 pt-3 border-t border-gray-800/60">
+                <div class="grid grid-cols-2 gap-2 mt-5 pt-3 border-t border-gray-800/60 dark:border-gray-800/60 border-gray-200/60">
                     <a href="https://e-commeerse.vercel.app/" target="_blank" class="py-2 bg-emerald-500 text-black font-bold rounded-lg text-center text-xs hover:bg-emerald-400 transition">Live Portal</a>
-                    <a href="https://github.com/Abhigit2504" target="_blank" class="py-2 bg-gray-900 hover:bg-gray-800 text-gray-300 font-medium rounded-lg text-center text-xs transition"><i class="fab fa-github"></i> Source</a>
+                    <a href="https://github.com/Abhigit2504" target="_blank" class="py-2 bg-gray-900 dark:bg-gray-900 bg-gray-200 hover:bg-gray-800 dark:hover:bg-gray-800 text-gray-300 dark:text-gray-300 text-gray-700 font-medium rounded-lg text-center text-xs transition"><i class="fab fa-github"></i> Source</a>
                 </div>
             </div>
 
             <!-- JobDone -->
-            <div class="bg-silicon-cardbg border border-gray-800/80 p-5 rounded-2xl flex flex-col justify-between hover:border-emerald-500/30 transition-all duration-300 shadow-xl">
+            <div class="project-card-dark dark:project-card-dark project-card-light p-5 rounded-2xl flex flex-col justify-between transition-all duration-300">
                 <div>
-                    <h3 class="font-bold text-white text-base">JobDone Portal</h3>
+                    <h3 class="font-bold text-white dark:text-white text-silicon-darkbg text-base">JobDone Portal</h3>
                     <span class="text-xs font-mono text-emerald-400 block mt-0.5 mb-3">MongoDB / Express / Node.js</span>
-                    <p class="text-xs text-gray-400 leading-relaxed">Constructed REST API schema routes managing asynchronous file structures for multi-tenant portal parameters smoothly.</p>
+                    <p class="text-xs text-gray-400 dark:text-gray-400 text-gray-600 leading-relaxed">Constructed REST API schema routes managing asynchronous file structures for multi-tenant portal parameters smoothly.</p>
                 </div>
-                <div class="grid grid-cols-2 gap-2 mt-5 pt-3 border-t border-gray-800/60">
+                <div class="grid grid-cols-2 gap-2 mt-5 pt-3 border-t border-gray-800/60 dark:border-gray-800/60 border-gray-200/60">
                     <a href="https://job-done-rkn4.vercel.app/" target="_blank" class="py-2 bg-emerald-500 text-black font-bold rounded-lg text-center text-xs hover:bg-emerald-400 transition">Live Portal</a>
-                    <a href="https://github.com/Abhigit2504" target="_blank" class="py-2 bg-gray-900 hover:bg-gray-800 text-gray-300 font-medium rounded-lg text-center text-xs transition"><i class="fab fa-github"></i> Source</a>
+                    <a href="https://github.com/Abhigit2504" target="_blank" class="py-2 bg-gray-900 dark:bg-gray-900 bg-gray-200 hover:bg-gray-800 dark:hover:bg-gray-800 text-gray-300 dark:text-gray-300 text-gray-700 font-medium rounded-lg text-center text-xs transition"><i class="fab fa-github"></i> Source</a>
                 </div>
             </div>
 
             <!-- Heavy Machinery -->
-            <div class="bg-silicon-cardbg border border-gray-800/80 p-5 rounded-2xl flex flex-col justify-between hover:border-emerald-500/20 transition-all duration-300 shadow-xl">
+            <div class="project-card-dark dark:project-card-dark project-card-light p-5 rounded-2xl flex flex-col justify-between transition-all duration-300">
                 <div>
-                    <h3 class="font-bold text-white text-base">Heavy Machinery Monitoring</h3>
+                    <h3 class="font-bold text-white dark:text-white text-silicon-darkbg text-base">Heavy Machinery Monitoring</h3>
                     <span class="text-xs font-mono text-emerald-400 block mt-0.5 mb-3">React Native / Django Backend</span>
-                    <p class="text-xs text-gray-400 leading-relaxed">Built real-time industrial telemetry monitoring with dynamic sync structures, mapping live thresholds with 99% telemetry accuracy pipelines.</p>
+                    <p class="text-xs text-gray-400 dark:text-gray-400 text-gray-600 leading-relaxed">Built real-time industrial telemetry monitoring with dynamic sync structures, mapping live thresholds with 99% telemetry accuracy pipelines.</p>
                 </div>
-                <div class="mt-5 pt-3 border-t border-gray-800/60">
-                    <a href="https://github.com/Abhigit2504" target="_blank" class="w-full block py-2 bg-gray-900 hover:bg-gray-800 text-gray-400 font-medium rounded-lg text-center text-xs transition"><i class="fab fa-github"></i> Source Code Only</a>
+                <div class="mt-5 pt-3 border-t border-gray-800/60 dark:border-gray-800/60 border-gray-200/60">
+                    <a href="https://github.com/Abhigit2504" target="_blank" class="w-full block py-2 bg-gray-900 dark:bg-gray-900 bg-gray-200 hover:bg-gray-800 dark:hover:bg-gray-800 text-gray-400 dark:text-gray-400 text-gray-700 font-medium rounded-lg text-center text-xs transition"><i class="fab fa-github"></i> Source Code Only</a>
                 </div>
             </div>
 
             <!-- sEMG Sensor -->
-            <div class="bg-silicon-cardbg border border-gray-800/80 p-5 rounded-2xl flex flex-col justify-between hover:border-emerald-500/20 transition-all duration-300 shadow-xl">
+            <div class="project-card-dark dark:project-card-dark project-card-light p-5 rounded-2xl flex flex-col justify-between transition-all duration-300">
                 <div>
-                    <h3 class="font-bold text-white text-base">sEMG Gesture Controller</h3>
+                    <h3 class="font-bold text-white dark:text-white text-silicon-darkbg text-base">sEMG Gesture Controller</h3>
                     <span class="text-xs font-mono text-emerald-400 block mt-0.5 mb-3">Embedded Systems / Signals</span>
-                    <p class="text-xs text-gray-400 leading-relaxed">Engineered human-machine peripheral hardware running muscle classification streams inside 6-month cycles, scaling metrics to 95% classification precision bounds.</p>
+                    <p class="text-xs text-gray-400 dark:text-gray-400 text-gray-600 leading-relaxed">Engineered human-machine peripheral hardware running muscle classification streams inside 6-month cycles, scaling metrics to 95% classification precision bounds.</p>
                 </div>
-                <div class="mt-5 pt-3 border-t border-gray-800/60">
-                    <a href="https://github.com/Abhigit2504" target="_blank" class="w-full block py-2 bg-gray-900 hover:bg-gray-800 text-gray-400 font-medium rounded-lg text-center text-xs transition"><i class="fab fa-github"></i> Source Code Only</a>
+                <div class="mt-5 pt-3 border-t border-gray-800/60 dark:border-gray-800/60 border-gray-200/60">
+                    <a href="https://github.com/Abhigit2504" target="_blank" class="w-full block py-2 bg-gray-900 dark:bg-gray-900 bg-gray-200 hover:bg-gray-800 dark:hover:bg-gray-800 text-gray-400 dark:text-gray-400 text-gray-700 font-medium rounded-lg text-center text-xs transition"><i class="fab fa-github"></i> Source Code Only</a>
                 </div>
             </div>
 
             <!-- Water Quality -->
-            <div class="bg-silicon-cardbg border border-gray-800/80 p-5 rounded-2xl flex flex-col justify-between hover:border-emerald-500/20 transition-all duration-300 shadow-xl">
+            <div class="project-card-dark dark:project-card-dark project-card-light p-5 rounded-2xl flex flex-col justify-between transition-all duration-300">
                 <div>
-                    <h3 class="font-bold text-white text-base">Water Quality Tracker</h3>
+                    <h3 class="font-bold text-white dark:text-white text-silicon-darkbg text-base">Water Quality Tracker</h3>
                     <span class="text-xs font-mono text-emerald-400 block mt-0.5 mb-3">Embedded C++ / I2C Buses</span>
-                    <p class="text-xs text-gray-400 leading-relaxed">Optimized multi-sensor telemetry processing paths inside I2C controller systems, driving a validated 20% reduction across localized wastewater parameters.</p>
+                    <p class="text-xs text-gray-400 dark:text-gray-400 text-gray-600 leading-relaxed">Optimized multi-sensor telemetry processing paths inside I2C controller systems, driving a validated 20% reduction across localized wastewater parameters.</p>
                 </div>
-                <div class="mt-5 pt-3 border-t border-gray-800/60">
-                    <a href="https://github.com/Abhigit2504" target="_blank" class="w-full block py-2 bg-gray-900 hover:bg-gray-800 text-gray-400 font-medium rounded-lg text-center text-xs transition"><i class="fab fa-github"></i> Source Code Only</a>
+                <div class="mt-5 pt-3 border-t border-gray-800/60 dark:border-gray-800/60 border-gray-200/60">
+                    <a href="https://github.com/Abhigit2504" target="_blank" class="w-full block py-2 bg-gray-900 dark:bg-gray-900 bg-gray-200 hover:bg-gray-800 dark:hover:bg-gray-800 text-gray-400 dark:text-gray-400 text-gray-700 font-medium rounded-lg text-center text-xs transition"><i class="fab fa-github"></i> Source Code Only</a>
                 </div>
             </div>
 
             <!-- Blood Donation -->
-            <div class="bg-silicon-cardbg border border-gray-800/80 p-5 rounded-2xl flex flex-col justify-between hover:border-emerald-500/20 transition-all duration-300 shadow-xl">
+            <div class="project-card-dark dark:project-card-dark project-card-light p-5 rounded-2xl flex flex-col justify-between transition-all duration-300">
                 <div>
-                    <h3 class="font-bold text-white text-base">Blood Donation System</h3>
+                    <h3 class="font-bold text-white dark:text-white text-silicon-darkbg text-base">Blood Donation System</h3>
                     <span class="text-xs font-mono text-emerald-400 block mt-0.5 mb-3">OOP / System Design / C++</span>
-                    <p class="text-xs text-gray-400 leading-relaxed">Engineered explicit structural models deploying local transactional file streams safely mapped through interactive console layer interfaces securely.</p>
+                    <p class="text-xs text-gray-400 dark:text-gray-400 text-gray-600 leading-relaxed">Engineered explicit structural models deploying local transactional file streams safely mapped through interactive console layer interfaces securely.</p>
                 </div>
-                <div class="mt-5 pt-3 border-t border-gray-800/60">
-                    <a href="https://github.com/Abhigit2504" target="_blank" class="w-full block py-2 bg-gray-900 hover:bg-gray-800 text-gray-400 font-medium rounded-lg text-center text-xs transition"><i class="fab fa-github"></i> Source Code Only</a>
+                <div class="mt-5 pt-3 border-t border-gray-800/60 dark:border-gray-800/60 border-gray-200/60">
+                    <a href="https://github.com/Abhigit2504" target="_blank" class="w-full block py-2 bg-gray-900 dark:bg-gray-900 bg-gray-200 hover:bg-gray-800 dark:hover:bg-gray-800 text-gray-400 dark:text-gray-400 text-gray-700 font-medium rounded-lg text-center text-xs transition"><i class="fab fa-github"></i> Source Code Only</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- IMMERSIVE SILICON TELEMETRY PORTALS (MODALS) -->
+    <!-- IMMERSIVE SILICON TELEMETRY PORTALS (MODALS) - same as before, no theme changes needed inside modals -->
     <!-- Modal 0: i gauana Physical Design -->
     <div id="igauana-modal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
         <div class="bg-[#060b13] border border-cyan-500/40 w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl relative max-h-[90vh] flex flex-col">
@@ -533,15 +607,16 @@
     </div>
 
     <!-- FOOTER -->
-    <footer class="bg-black/60 border-t border-gray-900 py-10 text-center text-gray-600 text-[11px] font-mono tracking-wider">
+    <footer class="bg-black/60 dark:bg-black/60 bg-gray-200/60 border-t border-gray-900 dark:border-gray-900 border-gray-200 py-10 text-center text-gray-600 dark:text-gray-600 text-gray-500 text-[11px] font-mono tracking-wider">
         <div class="max-w-6xl mx-auto px-4 space-y-2">
-            <p class="text-gray-400">Open to Technical Interviews & Engineering Architecture Team Onboarding</p>
+            <p class="text-gray-400 dark:text-gray-400 text-gray-600">Open to Technical Interviews & Engineering Architecture Team Onboarding</p>
             <p>&copy; 2026 Abhivardhan Tippani. Powered by Synopsys Core Architectures.</p>
         </div>
     </footer>
 
-    <!-- MODAL TELEMETRY LOGIC SCRIPTS -->
+    <!-- MODAL TELEMETRY LOGIC SCRIPTS + THEME TOGGLE -->
     <script>
+        // Modal functions
         function openModal(id) {
             document.getElementById(id).classList.remove('hidden');
             document.body.style.overflow = 'hidden';
@@ -550,6 +625,37 @@
             document.getElementById(id).classList.add('hidden');
             document.body.style.overflow = '';
         }
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const html = document.documentElement;
+
+        // Check localStorage for theme preference
+        let currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'light') {
+            html.classList.remove('dark');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        } else {
+            html.classList.add('dark');
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
     </script>
 </body>
 </html>
