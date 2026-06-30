@@ -222,44 +222,64 @@
             <p class="text-xs text-slate-500 font-mono mt-1 uppercase tracking-widest">Balanced Implementations // Click to Expand Complete Telemetry Specs</p>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="premium-card rounded-2xl p-6 relative flex flex-col justify-between bg-white">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="premium-card rounded-2xl p-5 relative flex flex-col justify-between bg-white">
                 <div>
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="text-[10px] font-mono uppercase tracking-widest bg-sky-50 text-sky-700 px-3 py-1 rounded-md border border-sky-200 font-bold">Synopsys Dc_Shell</span>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-mono uppercase tracking-widest bg-sky-50 text-sky-700 px-2.5 py-0.5 rounded border border-sky-200 font-bold">Synopsys ICC2</span>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3 tracking-wide">iguana: RTL Synthesis & Timing Closure</h3>
+                    <h3 class="text-base font-bold text-slate-900 mb-2 tracking-wide">iguana: Block-Level Physical Design</h3>
                     <p class="text-xs text-slate-600 leading-relaxed mb-4">
-                        Translated architectural RTL targets into gate-level libraries over TSMC 28nm silicon footprints, optimizing setup/hold constraints and resolving critical structural design parameters.
+                        Owned complete RTL-to-GDSII implementation of a 353K-gate block in TSMC 28nm node with 32 macro elements, executing advanced floorplanning and routing routines.
                     </p>
                     <div class="flex gap-2 text-[10px] font-mono text-slate-500">
                         <span><i class="fas fa-wave-square mr-1"></i> 91 MHz</span>
                         <span>&bull;</span>
-                        <span><i class="fas fa-microchip mr-1"></i> TSMC 28nm</span>
+                        <span><i class="fas fa-microchip mr-1"></i> 32 Macros</span>
                     </div>
                 </div>
-                <button onclick="openModal('rtl-modal')" class="mt-8 w-full py-3 bg-sky-500 hover:bg-sky-600 text-white font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-md shadow-sky-500/10 flex items-center justify-center gap-2">
-                    More Details <i class="fas fa-arrow-alt-circle-right"></i>
+                <button onclick="openModal('iguana-modal')" class="mt-6 w-full py-2.5 bg-sky-500 hover:bg-sky-600 text-white font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-md shadow-sky-500/10 flex items-center justify-center gap-2">
+                    Telemetry Overview <i class="fas fa-arrow-alt-circle-right"></i>
                 </button>
             </div>
 
-            <div class="premium-card rounded-2xl p-6 relative flex flex-col justify-between bg-white">
+            <div class="premium-card rounded-2xl p-5 relative flex flex-col justify-between bg-white">
                 <div>
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="text-[10px] font-mono uppercase tracking-widest bg-sky-50 text-sky-700 px-3 py-1 rounded-md border border-sky-200 font-bold">Synopsys ICC2 Layout</span>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-mono uppercase tracking-widest bg-sky-50 text-sky-700 px-2.5 py-0.5 rounded border border-sky-200 font-bold">Synopsys Dc_Shell</span>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3 tracking-wide">iguana: Physical Design Implementation</h3>
+                    <h3 class="text-base font-bold text-slate-900 mb-2 tracking-wide">RTL Synthesis & Timing Closure Engine</h3>
                     <p class="text-xs text-slate-600 leading-relaxed mb-4">
-                        Executed floorplan configurations, complex power distribution networks, standard cell configurations, balanced clock distribution networks, and signoff readiness checks.
+                        Translated front-end RTL descriptions into target logic libraries, generating complete SDC constraint matrices, managing primary clocks, and debugging early DRVs.
                     </p>
                     <div class="flex gap-2 text-[10px] font-mono text-slate-500">
-                        <span><i class="fas fa-layer-group mr-1"></i> 32 Macros</span>
+                        <span><i class="fas fa-terminal mr-1"></i> 20+ Constraints</span>
                         <span>&bull;</span>
-                        <span><i class="fas fa-check-circle mr-1"></i> DRC/LVS Clean</span>
+                        <span><i class="fas fa-bolt mr-1"></i> 100% Closure</span>
                     </div>
                 </div>
-                <button onclick="openModal('pd-modal')" class="mt-8 w-full py-3 bg-sky-500 hover:bg-sky-600 text-white font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-md shadow-sky-500/10 flex items-center justify-center gap-2">
-                    More Details <i class="fas fa-arrow-alt-circle-right"></i>
+                <button onclick="openModal('rtl-modal')" class="mt-6 w-full py-2.5 bg-sky-500 hover:bg-sky-600 text-white font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-md shadow-sky-500/10 flex items-center justify-center gap-2">
+                    Telemetry Overview <i class="fas fa-arrow-alt-circle-right"></i>
+                </button>
+            </div>
+
+            <div class="premium-card rounded-2xl p-5 relative flex flex-col justify-between bg-white">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-mono uppercase tracking-widest bg-sky-50 text-sky-700 px-2.5 py-0.5 rounded border border-sky-200 font-bold">RTL-to-GDSII ASIC</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 mb-2 tracking-wide">Physical Design & RTL-to-GDSII Implementation</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        Executed detailed multi-layer power planning networks, customized placement bounds, structured clock trees, and completed physical verification routines.
+                    </p>
+                    <div class="flex gap-2 text-[10px] font-mono text-slate-500">
+                        <span><i class="fas fa-layer-group mr-1"></i> 9 Metal Layers</span>
+                        <span>&bull;</span>
+                        <span><i class="fas fa-check-circle mr-1"></i> Clean Signoff</span>
+                    </div>
+                </div>
+                <button onclick="openModal('pd-modal')" class="mt-6 w-full py-2.5 bg-sky-500 hover:bg-sky-600 text-white font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-md shadow-sky-500/10 flex items-center justify-center gap-2">
+                    Telemetry Overview <i class="fas fa-arrow-alt-circle-right"></i>
                 </button>
             </div>
         </div>
@@ -298,7 +318,7 @@
                 </div>
             </div>
 
-            <div class="bg-white border border-slate-200 p-5 rounded-2xl flex flex-col justify-between shadow-sm hover:border-emerald-500/50 transition-all duration-300">
+            <div class="bg-white border border-slate-200 p-5 rounded-2xl flex flex-col justify-between shadow-sm hover:border-emerald-500/20 transition-all duration-300">
                 <div>
                     <h3 class="font-bold text-slate-900 text-base">Heavy Machinery Monitoring</h3>
                     <span class="text-xs font-mono text-emerald-600 block mt-0.5 mb-3">React Native / Django Backend</span>
@@ -309,7 +329,7 @@
                 </div>
             </div>
 
-            <div class="bg-white border border-slate-200 p-5 rounded-2xl flex flex-col justify-between shadow-sm hover:border-emerald-500/50 transition-all duration-300">
+            <div class="bg-white border border-slate-200 p-5 rounded-2xl flex flex-col justify-between shadow-sm hover:border-emerald-500/20 transition-all duration-300">
                 <div>
                     <h3 class="font-bold text-slate-900 text-base">sEMG Gesture Controller</h3>
                     <span class="text-xs font-mono text-emerald-600 block mt-0.5 mb-3">Embedded Systems / Signals</span>
@@ -320,7 +340,7 @@
                 </div>
             </div>
 
-            <div class="bg-white border border-slate-200 p-5 rounded-2xl flex flex-col justify-between shadow-sm hover:border-emerald-500/50 transition-all duration-300">
+            <div class="bg-white border border-slate-200 p-5 rounded-2xl flex flex-col justify-between shadow-sm hover:border-emerald-500/20 transition-all duration-300">
                 <div>
                     <h3 class="font-bold text-slate-900 text-base">Water Quality Tracker</h3>
                     <span class="text-xs font-mono text-emerald-600 block mt-0.5 mb-3">Embedded C++ / I2C Buses</span>
@@ -331,7 +351,7 @@
                 </div>
             </div>
 
-            <div class="bg-white border border-slate-200 p-5 rounded-2xl flex flex-col justify-between shadow-sm hover:border-emerald-500/50 transition-all duration-300">
+            <div class="bg-white border border-slate-200 p-5 rounded-2xl flex flex-col justify-between shadow-sm hover:border-emerald-500/20 transition-all duration-300">
                 <div>
                     <h3 class="font-bold text-slate-900 text-base">Blood Donation System</h3>
                     <span class="text-xs font-mono text-emerald-600 block mt-0.5 mb-3">OOP / System Design / C++</span>
@@ -344,12 +364,50 @@
         </div>
     </section>
 
+    <div id="iguana-modal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white border border-slate-200 w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl relative max-h-[90vh] flex flex-col">
+            <div class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex justify-between items-center">
+                <div>
+                    <h3 class="text-base font-mono font-bold text-slate-900">Telemetry Unit // iguana Implementation Matrix</h3>
+                    <p class="text-xs font-mono text-sky-700 mt-0.5">Scope: 353K-Gate Block | Platform: TSMC 28nm Hardware Node</p>
+                </div>
+                <button onclick="closeModal('iguana-modal')" class="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-full bg-white flex items-center justify-center border border-slate-200 font-mono text-xs">X</button>
+            </div>
+            <div class="p-6 overflow-y-auto space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-slate-50/50 p-5 rounded-xl border border-slate-200">
+                        <h4 class="text-xs font-mono uppercase text-slate-500 mb-4 font-bold tracking-wide">Key Responsibilities</h4>
+                        <ul class="text-xs text-slate-700 space-y-3 list-inside list-disc leading-relaxed">
+                            <li>Owned the end-to-end RTL-to-GDSII verification flow of a high-density 353K-gate system.</li>
+                            <li>Configured macro array distributions balancing floorplan constraints for 32 standalone macro layouts.</li>
+                            <li>Engineered simultaneous clock tree pathways synchronized over 6 primary clocks and 2 high-frequency generated internal clocks.</li>
+                            <li>Managed global pin placements, port orientations, and block interface planning configurations.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-sky-50/30 p-5 rounded-xl border border-sky-100">
+                        <h4 class="text-xs font-mono uppercase text-sky-700 mb-4 font-bold tracking-wide">Engineered Achievements</h4>
+                        <ul class="text-xs text-slate-700 space-y-3 leading-relaxed">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fas fa-microchip text-sky-500 mt-0.5 text-[11px]"></i> 
+                                <span>Maintained rock-solid clock network synchronization at a rated frequency constraint of 91 MHz.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fas fa-microchip text-sky-500 mt-0.5 text-[11px]"></i> 
+                                <span>Resolved multi-clock crosstalk loops via standard script libraries in the EDA workspace environment.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="rtl-modal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white border border-slate-200 w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl relative max-h-[90vh] flex flex-col">
             <div class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex justify-between items-center">
                 <div>
                     <h3 class="text-base font-mono font-bold text-slate-900">Telemetry Unit // RTL Synthesis Closure</h3>
-                    <p class="text-xs font-mono text-sky-700 mt-0.5">Project: iguana Block | Technology: TSMC 28nm | Clock: 91 MHz</p>
+                    <p class="text-xs font-mono text-sky-700 mt-0.5">Tooling Stack: Synopsys Design Compiler (DC Shell / DC NXT Engine)</p>
                 </div>
                 <button onclick="closeModal('rtl-modal')" class="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-full bg-white flex items-center justify-center border border-slate-200 font-mono text-xs">X</button>
             </div>
@@ -358,11 +416,10 @@
                     <div class="bg-slate-50/50 p-5 rounded-xl border border-slate-200">
                         <h4 class="text-xs font-mono uppercase text-slate-500 mb-4 font-bold tracking-wide">Key Responsibilities</h4>
                         <ul class="text-xs text-slate-700 space-y-3 list-inside list-disc leading-relaxed">
-                            <li>Read and thoroughly analyzed front-end RTL design structures alongside industry target technology libraries.</li>
-                            <li>Created and validated explicit SDC constraints including primary clocks, input/output operational delays, false paths, multicycle pathways, and specific clock uncertainties.</li>
-                            <li>Executed systematic health checks utilizing check_design and check_timing routines to secure data integrity.</li>
-                            <li>Addressed and resolved strict Design Rule Violations (DRV) including max transition bounds, max capacitance thresholds, and max fanout restrictions for proper timing convergence.</li>
-                            <li>Generated gate-level netlists and comprehensive QoR performance reports for cross-functional evaluations.</li>
+                            <li>Read and thoroughly analyzed front-end RTL design structures alongside target technology cell libraries.</li>
+                            <li>Created and validated explicit SDC constraints including primary clocks, input/output operational delays, and clock uncertainties.</li>
+                            <li>Executed design sanity diagnostics utilizing check_design and check_timing routines to secure front-end routing data integrity.</li>
+                            <li>Addressed and resolved strict Design Rule Violations (DRV) containing max transition bounds, max capacitance thresholds, and max fanout restrictions.</li>
                         </ul>
                     </div>
                     <div class="bg-sky-50/30 p-5 rounded-xl border border-sky-100">
@@ -370,19 +427,11 @@
                         <ul class="text-xs text-slate-700 space-y-3 leading-relaxed">
                             <li class="flex items-start gap-2.5">
                                 <i class="fas fa-microchip text-sky-500 mt-0.5 text-[11px]"></i> 
-                                <span>Owned full layout target constraints across 6 primary clocks and 2 high-performance generated clocks operating at 91 MHz.</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <i class="fas fa-microchip text-sky-500 mt-0.5 text-[11px]"></i> 
                                 <span>Achieved 100% comprehensive setup timing closure parameters with zero unresolved architecture path violations.</span>
                             </li>
                             <li class="flex items-start gap-2.5">
                                 <i class="fas fa-microchip text-sky-500 mt-0.5 text-[11px]"></i> 
-                                <span>Mitigated architectural layout path constraints early to boost global optimization flow routines by 40%.</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <i class="fas fa-microchip text-sky-500 mt-0.5 text-[11px]"></i> 
-                                <span>Optimized design rules effectively to secure robust timing margins across 353K synthesis logic gates.</span>
+                                <span>Defined and verified more than 20 structural timing constraints inside interactive script configurations.</span>
                             </li>
                         </ul>
                     </div>
@@ -396,7 +445,7 @@
             <div class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex justify-between items-center">
                 <div>
                     <h3 class="text-base font-mono font-bold text-slate-900">Telemetry Unit // RTL-to-GDSII Signoff</h3>
-                    <p class="text-xs font-mono text-sky-700 mt-0.5">Project: iguana Block | EDA Engine: Synopsys ICC2 Layout Suite</p>
+                    <p class="text-xs font-mono text-sky-700 mt-0.5">EDA Engine: Synopsys IC Compiler II (ICC2 Layout Suite)</p>
                 </div>
                 <button onclick="closeModal('pd-modal')" class="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-full bg-white flex items-center justify-center border border-slate-200 font-mono text-xs">X</button>
             </div>
@@ -405,11 +454,10 @@
                     <div class="bg-slate-50/50 p-5 rounded-xl border border-slate-200">
                         <h4 class="text-xs font-mono uppercase text-slate-500 mb-4 font-bold tracking-wide">Key Responsibilities</h4>
                         <ul class="text-xs text-slate-700 space-y-3 list-inside list-disc leading-relaxed">
-                            <li>Managed complete macro layout architecture, floorplanning parameters, optimal channel spacing strategies, and target port placement coordinates.</li>
-                            <li>Engineered highly robust power distribution grid configurations (PDN) using localized power rings and straps networks.</li>
-                            <li>Conducted advanced cell placement routines, path grouping allocations, and congestion tuning loops using detailed fly-line analysis engines.</li>
-                            <li>Configured custom Clock Tree Synthesis (CTS) architectures to ensure uniform global clock distribution.</li>
-                            <li>Executed post-route detailed ECO structural layout adjustments to achieve absolute physical layout signoff.</li>
+                            <li>Optimized floorplan aspect parameters, port alignments, channel spacing, and placement bounds via fly-line telemetry tracking.</li>
+                            <li>Engineered highly robust power distribution grid configurations (PDN) utilizing customized power rings and straps networks.</li>
+                            <li>Configured specialized Clock Tree Synthesis (CTS) patterns to balance global skew variations and eliminate layout violations.</li>
+                            <li>Integrated tap cells, filler blocks, decap cells, tie configurations, and boundary architectures to eliminate localized latch-up conditions.</li>
                         </ul>
                     </div>
                     <div class="bg-sky-50/30 p-5 rounded-xl border border-sky-100">
@@ -417,19 +465,15 @@
                         <ul class="text-xs text-slate-700 space-y-3 leading-relaxed">
                             <li class="flex items-start gap-2.5">
                                 <i class="fas fa-microchip text-sky-500 mt-0.5 text-[11px]"></i> 
-                                <span>Streamlined channel spacing rules, directly reducing layout routing congestion hotspots by 30%.</span>
+                                <span>Streamlined routing cell strategies, successfully dropping net congestion hotspots across routing channels by 30%.</span>
                             </li>
                             <li class="flex items-start gap-2.5">
                                 <i class="fas fa-microchip text-sky-500 mt-0.5 text-[11px]"></i> 
-                                <span>Boosted operational static IR drop margins by 20% while upholding maximum design EM reliability.</span>
+                                <span>Boosted active IR drop margin performance bounds by 20% while sustaining complete EM reliability limits.</span>
                             </li>
                             <li class="flex items-start gap-2.5">
                                 <i class="fas fa-microchip text-sky-500 mt-0.5 text-[11px]"></i> 
-                                <span>Balanced tree layouts successfully to eliminate 95% of active critical setup and hold violation paths.</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <i class="fas fa-microchip text-sky-500 mt-0.5 text-[11px]"></i> 
-                                <span>Integrated complex cell configurations (tap, filler, decap, and boundary cells) to secure 100% clean DRC/LVS physical signoff.</span>
+                                <span>Resolved over 95% of active critical setup and hold violation paths using post-route ECO loops.</span>
                             </li>
                         </ul>
                     </div>
