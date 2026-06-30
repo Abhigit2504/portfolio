@@ -392,90 +392,101 @@
         </div>
     </section>
 
-    <!-- VLSI PROJECTS -->
-    <section id="vlsi-projects" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-b border-[var(--border-light)]">
-        <div class="mb-10">
-            <h2 class="section-title"><span></span> VLSI Silicon Implementations</h2>
-            <p class="text-xs text-[var(--text-muted)] font-mono mt-1 uppercase tracking-widest">Click cards for detailed telemetry</p>
+   <!-- VLSI SILICON IMPLEMENTATIONS - ALL PROJECTS EQUAL PRIORITY -->
+<section id="vlsi-projects" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-b border-[var(--border-light)]">
+    <div class="mb-10">
+        <h2 class="section-title"><span></span> VLSI Silicon Implementations</h2>
+        <p class="text-xs text-[var(--text-muted)] font-mono mt-1 uppercase tracking-widest">Click cards for detailed telemetry</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- i gauana -->
+        <div class="project-card flex flex-col justify-between">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent-light)] px-3 py-1 rounded-full border border-[var(--accent)]/20">ICC2 • 28nm</span>
+                    <span class="pulse-dot"></span>
+                </div>
+                <h3 class="text-lg font-bold text-[var(--text-primary)] mb-2">i gauana — Physical Design</h3>
+                <p class="text-sm text-[var(--text-secondary)] leading-relaxed mb-3">
+                    353K gates, 32 macros, 6+2 clocks @ 91 MHz. Full RTL-to-GDSII with SDC, DRV, CTS, STA, DRC/LVS clean.
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs font-mono text-[var(--text-muted)]">
+                    <span><i class="fas fa-wave-square mr-1"></i> 91 MHz</span>
+                    <span>•</span>
+                    <span><i class="fas fa-microchip mr-1"></i> 28nm TSMC</span>
+                    <span>•</span>
+                    <span><i class="fas fa-layer-group mr-1"></i> 32 Macros</span>
+                </div>
+            </div>
+            <button onclick="openModal('igauana-modal')" class="btn-primary w-full mt-5 text-xs uppercase tracking-wider flex items-center justify-center gap-2 py-2.5">
+                More Details <i class="fas fa-arrow-right"></i>
+            </button>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- i gauana -->
-            <div class="project-card flex flex-col justify-between">
-                <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent-light)] px-3 py-1 rounded-full border border-[var(--accent)]/20">ICC2 • 28nm</span>
-                        <span class="pulse-dot"></span>
-                    </div>
-                    <h3 class="text-xl font-bold text-[var(--text-primary)] mb-2">i gauana — Physical Design</h3>
-                    <p class="text-sm text-[var(--text-secondary)] leading-relaxed mb-3">
-                        353K gates, 32 macros, 6+2 clocks @ 91 MHz. Full RTL-to-GDSII with SDC, DRV, CTS, STA, DRC/LVS clean.
-                    </p>
-                    <div class="flex flex-wrap gap-2 text-xs font-mono text-[var(--text-muted)]">
-                        <span><i class="fas fa-wave-square mr-1"></i> 91 MHz</span>
-                        <span>•</span>
-                        <span><i class="fas fa-microchip mr-1"></i> 28nm TSMC</span>
-                        <span>•</span>
-                        <span><i class="fas fa-layer-group mr-1"></i> 32 Macros</span>
-                    </div>
-                </div>
-                <button onclick="openModal('igauana-modal')" class="btn-primary w-full mt-5 text-xs uppercase tracking-wider flex items-center justify-center gap-2 py-2.5">
-                    More Details <i class="fas fa-arrow-right"></i>
-                </button>
-            </div>
 
-            <!-- RTL Synthesis -->
-            <div class="project-card flex flex-col justify-between">
-                <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent-light)] px-3 py-1 rounded-full border border-[var(--accent)]/20">DC Shell</span>
-                        <span class="pulse-dot"></span>
-                    </div>
-                    <h3 class="text-xl font-bold text-[var(--text-primary)] mb-2">RTL Synthesis & Timing Closure</h3>
-                    <p class="text-sm text-[var(--text-secondary)] leading-relaxed mb-3">
-                        Synthesis runs translating RTL to gate-level libraries over 28nm. Achieved 100% setup timing closure.
-                    </p>
-                    <div class="flex flex-wrap gap-2 text-xs font-mono text-[var(--text-muted)]">
-                        <span><i class="fas fa-wave-square mr-1"></i> 550 MHz</span>
-                        <span>•</span>
-                        <span><i class="fas fa-microchip mr-1"></i> 28nm Node</span>
-                    </div>
+        <!-- RTL Synthesis -->
+        <div class="project-card flex flex-col justify-between">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent-light)] px-3 py-1 rounded-full border border-[var(--accent)]/20">DC Shell</span>
+                    <span class="pulse-dot"></span>
                 </div>
-                <button onclick="openModal('rtl-modal')" class="btn-primary w-full mt-5 text-xs uppercase tracking-wider flex items-center justify-center gap-2 py-2.5">
-                    More Details <i class="fas fa-arrow-right"></i>
-                </button>
-            </div>
-
-            <!-- Physical Design & RTL-to-GDSII (full width) with flow steps -->
-            <div class="project-card flex flex-col justify-between md:col-span-2">
-                <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent-light)] px-3 py-1 rounded-full border border-[var(--accent)]/20">ICC2 • RTL-to-GDSII</span>
-                        <span class="pulse-dot"></span>
-                    </div>
-                    <h3 class="text-xl font-bold text-[var(--text-primary)] mb-2">Physical Design & RTL-to-GDSII Implementation</h3>
-                    <p class="text-sm text-[var(--text-secondary)] leading-relaxed mb-4">
-                        Full implementation: floorplan, standard cell placement, CTS, routing, STA, ECO, DRC/LVS clean signoff.
-                    </p>
-                    <!-- 5-step flow as key points -->
-                    <div class="grid grid-cols-5 gap-2 mb-4">
-                        <div class="flow-step"><span>1. Floorplan</span>Utilization, aspect, ports</div>
-                        <div class="flow-step"><span>2. Power</span>Rings & straps</div>
-                        <div class="flow-step"><span>3. Placement</span>Std. cell opt.</div>
-                        <div class="flow-step"><span>4. CTS</span>Skew tuning</div>
-                        <div class="flow-step"><span>5. Signoff</span>DRC/LVS/ECO</div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 text-xs font-mono text-[var(--text-muted)]">
-                        <span><i class="fas fa-layer-group mr-1"></i> 9 Metal Layers</span>
-                        <span>•</span>
-                        <span><i class="fas fa-check-circle mr-1"></i> DRC/LVS Clean</span>
-                    </div>
+                <h3 class="text-lg font-bold text-[var(--text-primary)] mb-2">RTL Synthesis & Timing Closure</h3>
+                <p class="text-sm text-[var(--text-secondary)] leading-relaxed mb-3">
+                    Synthesis runs translating RTL to gate-level libraries over 28nm. Achieved 100% setup timing closure.
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs font-mono text-[var(--text-muted)]">
+                    <span><i class="fas fa-wave-square mr-1"></i> 550 MHz</span>
+                    <span>•</span>
+                    <span><i class="fas fa-microchip mr-1"></i> 28nm Node</span>
                 </div>
-                <button onclick="openModal('pd-modal')" class="btn-primary w-full mt-4 text-xs uppercase tracking-wider flex items-center justify-center gap-2 py-2.5">
-                    More Details <i class="fas fa-arrow-right"></i>
-                </button>
             </div>
+            <button onclick="openModal('rtl-modal')" class="btn-primary w-full mt-5 text-xs uppercase tracking-wider flex items-center justify-center gap-2 py-2.5">
+                More Details <i class="fas fa-arrow-right"></i>
+            </button>
         </div>
-    </section>
+
+        <!-- Physical Design & RTL-to-GDSII -->
+        <div class="project-card flex flex-col justify-between">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent-light)] px-3 py-1 rounded-full border border-[var(--accent)]/20">ICC2 • RTL-to-GDSII</span>
+                    <span class="pulse-dot"></span>
+                </div>
+                <h3 class="text-lg font-bold text-[var(--text-primary)] mb-2">Physical Design & RTL-to-GDSII</h3>
+                <p class="text-sm text-[var(--text-secondary)] leading-relaxed mb-3">
+                    Full implementation: floorplan, standard cell placement, CTS, routing, STA, ECO, DRC/LVS clean signoff.
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs font-mono text-[var(--text-muted)]">
+                    <span><i class="fas fa-layer-group mr-1"></i> 9 Metal Layers</span>
+                    <span>•</span>
+                    <span><i class="fas fa-check-circle mr-1"></i> DRC/LVS Clean</span>
+                </div>
+                <!-- Compact flow steps -->
+                <div class="grid grid-cols-5 gap-1 mt-3">
+                    <div class="text-[8px] font-mono text-center bg-[var(--bg-primary)] p-1 rounded border border-[var(--border-light)]">
+                        <span class="block font-bold text-[var(--accent)] text-[9px]">1</span>Floorplan
+                    </div>
+                    <div class="text-[8px] font-mono text-center bg-[var(--bg-primary)] p-1 rounded border border-[var(--border-light)]">
+                        <span class="block font-bold text-[var(--accent)] text-[9px]">2</span>Power
+                    </div>
+                    <div class="text-[8px] font-mono text-center bg-[var(--bg-primary)] p-1 rounded border border-[var(--border-light)]">
+                        <span class="block font-bold text-[var(--accent)] text-[9px]">3</span>Placement
+                    </div>
+                    <div class="text-[8px] font-mono text-center bg-[var(--bg-primary)] p-1 rounded border border-[var(--border-light)]">
+                        <span class="block font-bold text-[var(--accent)] text-[9px]">4</span>CTS
+                    </div>
+                    <div class="text-[8px] font-mono text-center bg-[var(--bg-primary)] p-1 rounded border border-[var(--border-light)]">
+                        <span class="block font-bold text-[var(--accent)] text-[9px]">5</span>Signoff
+                    </div>
+                </div>
+            </div>
+            <button onclick="openModal('pd-modal')" class="btn-primary w-full mt-4 text-xs uppercase tracking-wider flex items-center justify-center gap-2 py-2.5">
+                More Details <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+</section>
 
     <!-- SOFTWARE PROJECTS -->
     <section id="software-projects" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
