@@ -250,7 +250,31 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- VLSI Project 1 Layout Card -->
+            <!-- VLSI Project 1: i gauana (new from resume) -->
+            <div class="premium-glass rounded-2xl overflow-hidden p-6 relative group flex flex-col justify-between bg-slate-950/40 border-cyan-500/30 shadow-lg shadow-cyan-500/10">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-[10px] font-mono uppercase tracking-widest bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-md border border-cyan-500/20 font-bold">ICC2 • 28nm</span>
+                        <div class="w-2 h-2 rounded-full bg-cyan-400 shadow-sm animate-pulse"></div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 tracking-wide">i gauana — Physical Design Implementation</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                        353K-gate block, 32 macros, 6 primary clocks + 2 generated clocks @ 91 MHz. Full RTL-to-GDSII implementation with SDC validation, DRV fixes, CTS, STA, and clean DRC/LVS signoff.
+                    </p>
+                    <div class="flex gap-2 text-[10px] font-mono text-gray-500 flex-wrap">
+                        <span><i class="fas fa-wave-square mr-1"></i> 91 MHz</span>
+                        <span>&bull;</span>
+                        <span><i class="fas fa-microchip mr-1"></i> 28nm TSMC</span>
+                        <span>&bull;</span>
+                        <span><i class="fas fa-layer-group mr-1"></i> 32 Macros</span>
+                    </div>
+                </div>
+                <button onclick="openModal('igauana-modal')" class="mt-8 w-full py-3 bg-cyan-500 hover:bg-cyan-400 text-black font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-cyan-500/10 hover:shadow-cyan-500/20 flex items-center justify-center gap-2">
+                    More Details <i class="fas fa-arrow-alt-circle-right"></i>
+                </button>
+            </div>
+
+            <!-- VLSI Project 2: RTL Synthesis & Timing Closure -->
             <div class="premium-glass rounded-2xl overflow-hidden p-6 relative group flex flex-col justify-between bg-slate-950/40">
                 <div>
                     <div class="flex justify-between items-center mb-4">
@@ -272,8 +296,8 @@
                 </button>
             </div>
 
-            <!-- VLSI Project 2 Layout Card -->
-            <div class="premium-glass rounded-2xl overflow-hidden p-6 relative group flex flex-col justify-between bg-slate-950/40">
+            <!-- VLSI Project 3: Physical Design & RTL-to-GDSII (original PD project) -->
+            <div class="premium-glass rounded-2xl overflow-hidden p-6 relative group flex flex-col justify-between bg-slate-950/40 md:col-span-2">
                 <div>
                     <div class="flex justify-between items-center mb-4">
                         <span class="text-[10px] font-mono uppercase tracking-widest bg-blue-500/10 text-blue-400 px-3 py-1 rounded-md border border-blue-500/20 font-bold">Synopsys Dc_shell ICC2</span>
@@ -383,6 +407,46 @@
     </section>
 
     <!-- IMMERSIVE SILICON TELEMETRY PORTALS (MODALS) -->
+    <!-- Modal 0: i gauana Physical Design -->
+    <div id="igauana-modal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-[#060b13] border border-cyan-500/40 w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl relative max-h-[90vh] flex flex-col">
+            <div class="bg-slate-900 px-6 py-4 border-b border-gray-800 flex justify-between items-center">
+                <div>
+                    <h3 class="text-lg font-mono font-bold text-white">Telemetry Unit // i gauana Physical Design</h3>
+                    <p class="text-xs font-mono text-cyan-400 mt-0.5">TSMC 28nm | 353K gates | 91 MHz</p>
+                </div>
+                <button onclick="closeModal('igauana-modal')" class="text-gray-400 hover:text-white w-8 h-8 rounded-full bg-slate-950 flex items-center justify-center border border-gray-800 font-mono text-xs">X</button>
+            </div>
+            <div class="p-6 overflow-y-auto space-y-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-[11px] font-mono text-center">
+                    <div class="bg-black/30 p-2.5 rounded-lg border border-gray-900"><span class="text-gray-500 block">Technology</span><span class="text-white font-bold">28nm TSMC</span></div>
+                    <div class="bg-black/30 p-2.5 rounded-lg border border-gray-900"><span class="text-gray-500 block">Gate Count</span><span class="text-white font-bold">353K</span></div>
+                    <div class="bg-black/30 p-2.5 rounded-lg border border-gray-900"><span class="text-gray-500 block">Macros</span><span class="text-white font-bold">32</span></div>
+                    <div class="bg-black/30 p-2.5 rounded-lg border border-gray-900"><span class="text-gray-500 block">Clocks</span><span class="text-white font-bold">6 primary + 2 gen</span></div>
+                </div>
+                <div>
+                    <h4 class="text-xs font-mono uppercase text-cyan-400 mb-3 font-bold">&bull; Implementation Highlights</h4>
+                    <ul class="text-xs text-gray-300 space-y-2 list-disc list-inside">
+                        <li>Developed and validated SDC constraints (clocks, I/O delays, false/multicycle paths, clock uncertainties).</li>
+                        <li>Performed check design &amp; check timing; resolved DRV violations (max transition, capacitance, fanout).</li>
+                        <li>Optimized port/macro placement, congestion, and power grid using fly-line analysis, hierarchy browser, path grouping, placement bounds, and customized ICC2 TCL scripts.</li>
+                        <li>Validated CTS, resolved setup/hold, skew, and crosstalk; achieved clean DRC/LVS signoff via routing optimization and ECO fixes.</li>
+                    </ul>
+                </div>
+                <div class="bg-cyan-950/10 p-5 rounded-xl border border-cyan-500/20">
+                    <h4 class="text-xs font-mono uppercase text-cyan-400 mb-3 font-bold">Signoff Telemetry Metrics</h4>
+                    <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center font-mono">
+                        <div class="bg-slate-950 p-3 rounded-lg"><span class="block text-lg font-bold text-cyan-400">Clean</span><span class="text-[9px] text-gray-500 uppercase">DRC/LVS</span></div>
+                        <div class="bg-slate-950 p-3 rounded-lg"><span class="block text-lg font-bold text-cyan-400">0</span><span class="text-[9px] text-gray-500 uppercase">Setup Violations</span></div>
+                        <div class="bg-slate-950 p-3 rounded-lg"><span class="block text-lg font-bold text-cyan-400">0</span><span class="text-[9px] text-gray-500 uppercase">Hold Violations</span></div>
+                        <div class="bg-slate-950 p-3 rounded-lg"><span class="block text-lg font-bold text-cyan-400">-30%</span><span class="text-[9px] text-gray-500 uppercase">Congestion</span></div>
+                        <div class="bg-slate-950 p-3 rounded-lg"><span class="block text-lg font-bold text-cyan-400">+20%</span><span class="text-[9px] text-gray-500 uppercase">IR Margin</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal 1: RTL Synthesis -->
     <div id="rtl-modal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
         <div class="bg-[#060b13] border border-cyan-500/40 w-full max-w-3xl rounded-2xl overflow-hidden shadow-2xl relative max-h-[90vh] flex flex-col">
