@@ -12,13 +12,12 @@
                 extend: {
                     colors: {
                         silicon: {
-                            emerald: '#059669',
-                            emeraldHover: '#047857',
-                            lightbg: '#f9fafb',
+                            cyan: '#0ea5e9',
+                            lightbg: '#f8fafc',
                             cardbg: '#ffffff',
-                            border: '#e5e7eb',
-                            textPrimary: '#111827',
-                            textSecondary: '#4b5563'
+                            border: '#e2e8f0',
+                            accent: '#0284c7',
+                            matrixGreen: '#10b981'
                         }
                     }
                 }
@@ -28,393 +27,432 @@
     <style>
         .premium-card {
             background: #ffffff;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
         .premium-card:hover {
-            border-color: #10b981;
-            box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.1), 0 8px 10px -6px rgba(16, 185, 129, 0.1);
-            transform: translateY(-2px);
+            border-color: #0ea5e9;
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.1);
+            transform: translateY(-4px);
         }
         .skill-badge {
-            background: #f3f4f6;
-            border: 1px solid #e5e7eb;
-            color: #374151;
-            transition: all 0.2s ease;
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            color: #334155;
+            transition: all 0.3s ease;
         }
         .skill-badge:hover {
-            background: rgba(16, 185, 129, 0.1);
-            border-color: #059669;
-            color: #059669;
+            background: #e0f2fe;
+            border-color: #0ea5e9;
+            color: #0369a1;
         }
     </style>
 </head>
-<body class="bg-silicon-lightbg text-silicon-textSecondary font-sans antialiased selection:bg-emerald-500/20 selection:text-emerald-900">
+<body class="bg-silicon-lightbg text-slate-800 font-sans antialiased selection:bg-sky-500/20 selection:text-sky-900">
 
-    <nav class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <span class="text-lg font-mono font-black tracking-[0.2em] text-silicon-textPrimary">AT<span class="text-silicon-emerald">//PD-VLSI</span></span>
+    <nav class="sticky top-0 z-40 bg-white/90 backdrop-blur-xl border-b border-slate-200 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="flex flex-col">
+                    <span class="text-lg font-mono font-black tracking-[0.15em] text-slate-900">AT<span class="text-silicon-cyan">//PD-VLSI</span></span>
+                </div>
             </div>
-            <div class="flex space-x-6 text-xs font-mono tracking-wider uppercase">
-                <a href="#about" class="text-silicon-textSecondary hover:text-silicon-emerald transition-colors font-semibold">About</a>
-                <a href="#skills" class="text-silicon-textSecondary hover:text-silicon-emerald transition-colors font-semibold">Skills</a>
-                <a href="#vlsi-projects" class="text-silicon-textSecondary hover:text-silicon-emerald transition-colors font-semibold">VLSI Core</a>
-                <a href="#software-projects" class="text-silicon-textSecondary hover:text-silicon-emerald transition-colors font-semibold">Software</a>
+            <div class="flex space-x-6 text-xs font-mono tracking-wider uppercase font-semibold">
+                <a href="#about" class="text-slate-600 hover:text-silicon-cyan transition-colors">About</a>
+                <a href="#skills" class="text-slate-600 hover:text-silicon-cyan transition-colors">Specifications</a>
+                <a href="#vlsi-projects" class="text-slate-600 hover:text-silicon-cyan transition-colors">Silicon Core</a>
+                <a href="#software-projects" class="text-slate-600 hover:text-silicon-cyan transition-colors">Software Layout</a>
             </div>
         </div>
     </nav>
 
-    <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col lg:flex-row items-center gap-16 border-b border-gray-200">
+    <section id="about" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col lg:flex-row items-center gap-14 border-b border-slate-200 relative">
         <div class="relative group flex-shrink-0">
-            <div class="absolute -inset-1 bg-gradient-to-r from-silicon-emerald to-teal-500 rounded-2xl blur opacity-15 group-hover:opacity-25 transition duration-500"></div>
-            <div class="w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden border border-gray-200 bg-white relative z-10 p-2 shadow-inner">
-                <img src="ChatGPT Image May 8, 2026, 11_06_19 AM.png" alt="Abhivardhan Tippani" class="w-full h-full object-cover rounded-xl">
+            <div class="absolute -inset-1.5 bg-gradient-to-r from-silicon-cyan to-sky-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+            <div class="w-52 h-52 md:w-60 md:h-60 rounded-2xl overflow-hidden border border-slate-200 bg-white relative z-10 shadow-md">
+                <img src="ChatGPT Image May 8, 2026, 11_06_19 AM.png" alt="Abhivardhan Tippani" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500">
             </div>
         </div>
         
-        <div class="flex-1 text-center lg:text-left">
-            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-silicon-textPrimary mb-3">Abhivardhan Tippani</h1>
-            <span class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono tracking-widest text-silicon-emerald bg-emerald-50 rounded-full mb-6 uppercase border border-emerald-200 font-semibold">
-                <i class="fas fa-microchip text-[10px]"></i> RTL-to-GDSII Physical Design Engineer
+        <div class="flex-1 text-center lg:text-left z-10">
+            <h1 class="text-4xl md:text-5xl font-black tracking-tight text-slate-900 mb-2">Abhivardhan Tippani</h1>
+            <span class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono tracking-widest text-sky-700 bg-sky-50 rounded-full mb-4 uppercase border border-sky-200">
+                <i class="fas fa-layer-group text-[10px]"></i> RTL-to-GDSII Physical Design
             </span>
-            <p class="text-silicon-textSecondary leading-relaxed max-w-3xl mb-8 text-sm md:text-base">
-                Specialized in complete RTL-to-GDSII engineering workflows, macro floorplanning, power planning, placement optimization, clock tree synthesis (CTS), static timing analysis closure parameters, and clean physical design verification signoffs.
+            <p class="text-slate-600 leading-relaxed max-w-2xl mb-8 text-sm md:text-base">
+                Specialized in comprehensive RTL-to-GDSII physical implementation workflows, macro floorplanning, placement optimization, clock tree synthesis (CTS), static timing analysis closure parameters, and clean physical verification signoff.
             </p>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left max-w-4xl mb-8">
-                <div class="p-5 rounded-xl bg-white border border-gray-200 relative overflow-hidden shadow-sm">
-                    <div class="absolute top-0 left-0 w-1 h-full bg-silicon-emerald"></div>
-                    <span class="text-gray-400 text-[10px] font-mono uppercase tracking-wider block mb-1 font-bold">Degree Education</span>
-                    <h4 class="text-sm font-bold text-silicon-textPrimary tracking-wide">IIIT Sri City, India</h4>
-                    <p class="text-xs text-silicon-emerald font-mono mt-0.5 font-semibold">B.Tech in Electronics and Communication Engineering</p>
-                    <p class="text-[10px] text-gray-400 font-mono mt-2 uppercase"><i class="far fa-calendar-alt mr-1"></i> Dec 2021 - Aug 2025</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 max-w-2xl text-left">
+                <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-silicon-cyan"></div>
+                    <div class="flex items-start gap-3">
+                        <div class="p-2 rounded-lg bg-sky-50 text-silicon-cyan mt-1">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-slate-900 tracking-wide">IIIT Sri City</h4>
+                            <p class="text-xs text-sky-700 font-mono mt-0.5">B.Tech in ECE</p>
+                            <p class="text-[10px] text-slate-500 font-mono mt-1 uppercase tracking-wider"><i class="far fa-calendar-alt mr-1"></i> Dec 2021 - Aug 2025</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="p-5 rounded-xl bg-white border border-gray-200 relative overflow-hidden shadow-sm">
-                    <div class="absolute top-0 left-0 w-1 h-full bg-emerald-500"></div>
-                    <span class="text-gray-400 text-[10px] font-mono uppercase tracking-wider block mb-1 font-bold">ASIC Training Certification</span>
-                    <h4 class="text-sm font-bold text-silicon-textPrimary tracking-wide">Sumedha IT, Hyderabad</h4>
-                    <p class="text-xs text-silicon-emerald font-mono mt-0.5 font-semibold">Physical Design Engineering Specialization</p>
-                    <p class="text-[10px] text-silicon-textSecondary font-mono mt-1 font-semibold">ID: SHYD2509PD011 &bull; <span class="text-gray-400 uppercase font-normal">Sep 2025 - Mar 2026</span></p>
+
+                <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-silicon-cyan"></div>
+                    <div class="flex items-start gap-3">
+                        <div class="p-2 rounded-lg bg-sky-50 text-silicon-cyan mt-1">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-slate-900 tracking-wide">Physical Design Certified</h4>
+                            <p class="text-xs text-sky-700 font-mono mt-0.5">Sumedha IT, Hyderabad</p>
+                            <p class="text-[10px] text-slate-500 font-mono mt-1 uppercase tracking-wider"><i class="far fa-calendar-alt mr-1"></i> Sep 2025 - Mar 2026</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="flex flex-wrap justify-center lg:justify-start gap-4 text-xs font-mono uppercase tracking-wider">
-                <a href="https://www.linkedin.com/in/abhivardhan-tippeni-1308b4319" target="_blank" class="px-6 py-3.5 bg-silicon-emerald hover:bg-silicon-emeraldHover text-white font-bold rounded-xl transition flex items-center gap-2 shadow-md shadow-emerald-700/10">
-                    <i class="fab fa-linkedin-in"></i> LinkedIn Profile
+                <a href="https://www.linkedin.com/in/abhivardhan-tippeni-1308b4319" target="_blank" class="px-6 py-3 bg-silicon-cyan text-white font-bold rounded-lg hover:bg-sky-600 transition flex items-center gap-2 shadow-md shadow-sky-500/10">
+                    <i class="fab fa-linkedin-in"></i> LinkedIn Connect
                 </a>
-                <a href="https://github.com/Abhigit2504" target="_blank" class="px-6 py-3.5 bg-white hover:bg-gray-50 border border-gray-300 text-silicon-textPrimary font-bold rounded-xl transition flex items-center gap-2 shadow-sm">
+                <a href="https://github.com/Abhigit2504" target="_blank" class="px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-lg transition flex items-center gap-2">
                     <i class="fab fa-github"></i> Repository
                 </a>
-                <a href="mailto:varmaabhivardhan@gmail.com" class="px-6 py-3.5 border border-gray-300 bg-white hover:bg-gray-50 text-silicon-textSecondary hover:text-silicon-textPrimary rounded-xl transition flex items-center gap-2 shadow-sm">
-                    <i class="fas fa-envelope"></i> Contact Mail
+                <a href="mailto:varmaabhivardhan@gmail.com" class="px-6 py-3 bg-white border border-slate-300 hover:border-slate-400 text-slate-600 hover:text-slate-900 rounded-lg transition flex items-center gap-2 shadow-sm">
+                    <i class="fas fa-envelope"></i> Mail
                 </a>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-gray-200">
-        <div class="mb-14">
-            <h2 class="text-2xl font-bold text-silicon-textPrimary flex items-center gap-3">
-                <span class="w-1.5 h-6 bg-silicon-emerald rounded-full"></span> Technical Specifications Matrix
+    <section id="skills" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-slate-200 relative">
+        <div class="mb-12">
+            <h2 class="text-2xl font-extrabold text-slate-900 flex items-center gap-3 tracking-wide">
+                <span class="w-1.5 h-6 bg-silicon-cyan rounded-full shadow-md"></span> Technical Specifications Engine
             </h2>
-            <p class="text-xs text-gray-400 font-mono mt-1 uppercase tracking-widest font-semibold">Configured Environment Ecosystem Specs</p>
+            <p class="text-xs text-slate-500 font-mono mt-1 uppercase tracking-widest">Validated Skill Matrices Configured for Direct ATS Parsing</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="premium-card p-6 rounded-2xl flex flex-col justify-between">
                 <div>
-                    <div class="flex items-center gap-3 mb-5">
-                        <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-silicon-emerald border border-emerald-200">
-                            <i class="fas fa-layer-group text-xs"></i>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-9 h-9 rounded-xl bg-sky-50 flex items-center justify-center text-silicon-cyan border border-sky-100">
+                            <i class="fas fa-microchip text-sm"></i>
                         </div>
-                        <h3 class="text-xs font-bold text-silicon-textPrimary uppercase tracking-wider font-mono">Physical Design</h3>
+                        <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider font-mono">Physical Design</h3>
                     </div>
                     <div class="flex flex-wrap gap-1.5">
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">RTL-to-GDSII</span>
                         <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">Floorplanning</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">Power Planning (PG)</span>
                         <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">Macro Placement</span>
                         <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">CTS Network</span>
                         <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">Detailed Routing</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">Congestion Fixes</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">ECO Fixes</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">SDC Constraints</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">MCMM</span>
+                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">Congestion Mitigation</span>
+                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">STA Signoff</span>
+                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">ECO Frameworks</span>
                     </div>
                 </div>
             </div>
 
             <div class="premium-card p-6 rounded-2xl flex flex-col justify-between">
                 <div>
-                    <div class="flex items-center gap-3 mb-5">
-                        <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-silicon-emerald border border-emerald-200">
-                            <i class="fas fa-clipboard-check text-xs"></i>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-9 h-9 rounded-xl bg-sky-50 flex items-center justify-center text-silicon-cyan border border-sky-100">
+                            <i class="fas fa-shield-virus text-sm"></i>
                         </div>
-                        <h3 class="text-xs font-bold text-silicon-textPrimary uppercase tracking-wider font-mono">Signoff & Verification</h3>
+                        <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider font-mono">Verification</h3>
                     </div>
                     <div class="flex flex-wrap gap-1.5">
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">STA Signoff</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">Timing Closure</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">DRC Verification</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">LVS Match Check</span>
+                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded font-bold text-sky-700">DRC Signoff</span>
+                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded font-bold text-sky-700">LVS Matching</span>
                         <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">ERC Validation</span>
                         <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">Antenna Checks</span>
                         <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">IR-Drop Reliability</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">Signal Integrity</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">QoR Optimization</span>
                     </div>
                 </div>
             </div>
 
             <div class="premium-card p-6 rounded-2xl flex flex-col justify-between">
                 <div>
-                    <div class="flex items-center gap-3 mb-5">
-                        <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-silicon-emerald border border-emerald-200">
-                            <i class="fas fa-terminal text-xs"></i>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-9 h-9 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 border border-amber-100">
+                            <i class="fas fa-terminal text-sm"></i>
                         </div>
-                        <h3 class="text-xs font-bold text-silicon-textPrimary uppercase tracking-wider font-mono">EDA & Automation</h3>
+                        <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider font-mono">EDA & Automation</h3>
                     </div>
                     <div class="flex flex-wrap gap-1.5">
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">IC Compiler II (ICC2)</span>
+                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">Synopsys ICC2</span>
                         <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">Design Compiler</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">DC Shell Environment</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">PrimeTime (PT Shell)</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">StarRC Tool</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">Formality Logical</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">TCL Scripting</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">Python Logic</span>
+                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">DC Shell Env</span>
+                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">TCL Architecture</span>
+                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">Python Scripting</span>
+                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">LTspice / Cadence</span>
                     </div>
                 </div>
             </div>
 
             <div class="premium-card p-6 rounded-2xl flex flex-col justify-between">
                 <div>
-                    <div class="flex items-center gap-3 mb-5">
-                        <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-silicon-emerald border border-emerald-200">
-                            <i class="fas fa-code text-xs"></i>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-9 h-9 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600 border border-purple-100">
+                            <i class="fas fa-network-wired text-sm"></i>
                         </div>
-                        <h3 class="text-xs font-bold text-silicon-textPrimary uppercase tracking-wider font-mono">Software Systems</h3>
+                        <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider font-mono">Systems & Software</h3>
                     </div>
                     <div class="flex flex-wrap gap-1.5">
                         <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">Full-Stack MERN</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">React JS / Node.js</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">Django / Flask</span>
+                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">Django Engines</span>
                         <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">MySQL / MongoDB</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">C++ / C Engineering</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">Embedded System</span>
-                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">MATLAB / Git</span>
+                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">C++ Programming</span>
+                        <span class="skill-badge text-[10px] font-mono px-2 py-0.5 rounded">Embedded Firmware</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="vlsi-projects" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-gray-200">
-        <div class="mb-14">
-            <h2 class="text-2xl font-bold text-silicon-textPrimary flex items-center gap-3">
-                <span class="w-1.5 h-6 bg-silicon-emerald rounded-full"></span> ASIC Core Implementations
+    <section id="vlsi-projects" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-slate-200">
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
+                <span class="w-1.5 h-6 bg-sky-500 rounded-full"></span> VLSI Silicon Engineering Implementations
             </h2>
-            <p class="text-xs text-gray-400 font-mono mt-1 uppercase tracking-widest font-semibold">Real Hardware Telemetry & Design Runs</p>
+            <p class="text-xs text-slate-500 font-mono mt-1 uppercase tracking-widest">Balanced Implementations // Click to Expand Complete Telemetry Specs</p>
         </div>
         
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            
-            <div class="premium-card rounded-2xl p-6 flex flex-col justify-between bg-white border border-gray-200 shadow-sm">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="premium-card rounded-2xl p-6 relative flex flex-col justify-between bg-white">
                 <div>
                     <div class="flex justify-between items-center mb-4">
-                        <span class="text-[10px] font-mono uppercase bg-gray-100 text-silicon-textSecondary px-2.5 py-1 rounded border border-gray-200 font-bold">Synopsys ICC2 Layout Suite // TSMC 28nm</span>
+                        <span class="text-[10px] font-mono uppercase tracking-widest bg-sky-50 text-sky-700 px-3 py-1 rounded-md border border-sky-200 font-bold">Synopsys Dc_Shell</span>
                     </div>
-                    <h3 class="text-xl font-extrabold text-silicon-textPrimary mb-3">Project: Iguana Physical Design Implementation</h3>
-                    <p class="text-xs text-silicon-textSecondary leading-relaxed mb-6">
-                        Owned the complete end-to-end RTL-to-GDSII structural implementation workflow of a complex 353K-gate digital design block mapped on a premium TSMC 28nm technology node concurrently handling 32 macros.
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 tracking-wide">iguana: RTL Synthesis & Timing Closure</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        Translated architectural RTL targets into gate-level libraries over TSMC 28nm silicon footprints, optimizing setup/hold constraints and resolving critical structural design parameters.
                     </p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-gray-100">
-                        <div>
-                            <h4 class="text-xs font-mono uppercase text-silicon-textPrimary font-bold mb-3 tracking-wider">Key Responsibilities</h4>
-                            <ul class="text-[11px] text-silicon-textSecondary space-y-2 list-none">
-                                <li class="flex items-start gap-2">
-                                    <span class="text-silicon-emerald mt-0.5">&bull;</span>
-                                    <span>Developed and validated SDC timing constraints including clocks, I/O delays, and false paths.</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-silicon-emerald mt-0.5">&bull;</span>
-                                    <span>Optimized macro placement, port configuration, and power grid network using fly-line analysis.</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-silicon-emerald mt-0.5">&bull;</span>
-                                    <span>Integrated special cells (tap, filler, decap, tie logic) for reliable latch-up prevention.</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-xs font-mono uppercase text-silicon-emerald font-bold mb-3 tracking-wider">Engineered Achievements</h4>
-                            <ul class="text-[11px] text-silicon-textSecondary space-y-2 list-none">
-                                <li class="flex items-start gap-2">
-                                    <span class="text-silicon-emerald mt-0.5"><i class="fas fa-microchip text-[9px]"></i></span>
-                                    <span>Resolved 95% of setup and hold violations through automated ECO fixes.</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-silicon-emerald mt-0.5"><i class="fas fa-microchip text-[9px]"></i></span>
-                                    <span>Reduced routing congestion hotspots by 30% via streamlined spacing.</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-silicon-emerald mt-0.5"><i class="fas fa-microchip text-[9px]"></i></span>
-                                    <span>Improved IR drop safety margin by 20% while fully preserving EM reliability bounds.</span>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="flex gap-2 text-[10px] font-mono text-slate-500">
+                        <span><i class="fas fa-wave-square mr-1"></i> 91 MHz</span>
+                        <span>&bull;</span>
+                        <span><i class="fas fa-microchip mr-1"></i> TSMC 28nm</span>
                     </div>
                 </div>
-                <div class="pt-6 mt-6 border-t border-gray-100 flex items-center justify-between text-[11px] font-mono text-gray-400">
-                    <span><i class="fas fa-wave-square mr-1 text-silicon-emerald"></i> 91 MHz Core</span>
-                    <span><i class="fas fa-check-circle mr-1 text-silicon-emerald"></i> Clean GDSII Signoff</span>
-                </div>
+                <button onclick="openModal('rtl-modal')" class="mt-8 w-full py-3 bg-sky-500 hover:bg-sky-600 text-white font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-md shadow-sky-500/10 flex items-center justify-center gap-2">
+                    More Details <i class="fas fa-arrow-alt-circle-right"></i>
+                </button>
             </div>
 
-            <div class="premium-card rounded-2xl p-6 flex flex-col justify-between bg-white border border-gray-200 shadow-sm">
+            <div class="premium-card rounded-2xl p-6 relative flex flex-col justify-between bg-white">
                 <div>
                     <div class="flex justify-between items-center mb-4">
-                        <span class="text-[10px] font-mono uppercase bg-gray-100 text-silicon-textSecondary px-2.5 py-1 rounded border border-gray-200 font-bold">Synopsys Dc_Shell // 28nm Library</span>
+                        <span class="text-[10px] font-mono uppercase tracking-widest bg-sky-50 text-sky-700 px-3 py-1 rounded-md border border-sky-200 font-bold">Synopsys ICC2 Layout</span>
                     </div>
-                    <h3 class="text-xl font-extrabold text-silicon-textPrimary mb-3">RTL Synthesis & Timing Closure</h3>
-                    <p class="text-xs text-silicon-textSecondary leading-relaxed mb-6">
-                        Performed production synthesis runs translating design architectural RTL definitions directly into gate-level libraries over high-performance target silicon footprints.
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 tracking-wide">iguana: Physical Design Implementation</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        Executed floorplan configurations, complex power distribution networks, standard cell configurations, balanced clock distribution networks, and signoff readiness checks.
                     </p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-gray-100">
-                        <div>
-                            <h4 class="text-xs font-mono uppercase text-silicon-textPrimary font-bold mb-3 tracking-wider">Key Responsibilities</h4>
-                            <ul class="text-[11px] text-silicon-textSecondary space-y-2 list-none">
-                                <li class="flex items-start gap-2">
-                                    <span class="text-silicon-emerald mt-0.5">&bull;</span>
-                                    <span>Read and thoroughly analyzed RTL design files alongside target technology cell libraries.</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-silicon-emerald mt-0.5">&bull;</span>
-                                    <span>Created and validated operational SDC constraints, clock uncertainties, and multicycle paths.</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-silicon-emerald mt-0.5">&bull;</span>
-                                    <span>Analyzed critical setup timing violations and generated comprehensive gate-level QoR netlists.</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-xs font-mono uppercase text-silicon-emerald font-bold mb-3 tracking-wider">Engineered Achievements</h4>
-                            <ul class="text-[11px] text-silicon-textSecondary space-y-2 list-none">
-                                <li class="flex items-start gap-2">
-                                    <span class="text-silicon-emerald mt-0.5"><i class="fas fa-microchip text-[9px]"></i></span>
-                                    <span>Achieved 100% full setup timing closure criteria with zero remaining violations.</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-silicon-emerald mt-0.5"><i class="fas fa-microchip text-[9px]"></i></span>
-                                    <span>Reduced physical datapath delay parameters by 15% across critical nets.</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-silicon-emerald mt-0.5"><i class="fas fa-microchip text-[9px]"></i></span>
-                                    <span>Optimized cell logic area constraints, reducing total utilization by 8% through synthesis.</span>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="flex gap-2 text-[10px] font-mono text-slate-500">
+                        <span><i class="fas fa-layer-group mr-1"></i> 32 Macros</span>
+                        <span>&bull;</span>
+                        <span><i class="fas fa-check-circle mr-1"></i> DRC/LVS Clean</span>
                     </div>
                 </div>
-                <div class="pt-6 mt-6 border-t border-gray-100 flex items-center justify-between text-[11px] font-mono text-gray-400">
-                    <span><i class="fas fa-wave-square mr-1 text-silicon-emerald"></i> 550 MHz Target</span>
-                    <span><i class="fas fa-bullseye mr-1 text-silicon-emerald"></i> 20+ Validated Constraints</span>
-                </div>
+                <button onclick="openModal('pd-modal')" class="mt-8 w-full py-3 bg-sky-500 hover:bg-sky-600 text-white font-extrabold rounded-xl text-xs uppercase tracking-wider transition-all shadow-md shadow-sky-500/10 flex items-center justify-center gap-2">
+                    More Details <i class="fas fa-arrow-alt-circle-right"></i>
+                </button>
             </div>
-
         </div>
     </section>
 
-    <section id="software-projects" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="mb-14">
-            <h2 class="text-2xl font-bold text-silicon-textPrimary flex items-center gap-3">
-                <span class="w-1.5 h-6 bg-silicon-emerald rounded-full"></span> Full-Stack Software Deployments
+    <section id="software-projects" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
+                <span class="w-1.5 h-6 bg-emerald-500 rounded-full"></span> Full-Stack Software Systems Engineering
             </h2>
-            <p class="text-xs text-gray-400 font-mono mt-1 uppercase tracking-widest font-semibold">Secondary Digital Software Systems Pipelines</p>
+            <p class="text-xs text-slate-500 font-mono mt-1 uppercase tracking-widest">Secondary Development Deployments Stack</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="premium-card p-5 rounded-2xl flex flex-col justify-between">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white border border-slate-200 p-5 rounded-2xl flex flex-col justify-between shadow-sm hover:border-emerald-500/50 transition-all duration-300">
                 <div>
-                    <h3 class="font-bold text-silicon-textPrimary text-base">Make Your Basket</h3>
-                    <span class="text-xs font-mono text-silicon-emerald block mt-0.5 mb-3 font-semibold">MERN Stack Layout / MySQL Engine</span>
-                    <p class="text-xs text-silicon-textSecondary leading-relaxed">Constructed e-commerce database transaction logic balancing peak execution scaling of 50 orders/min while locking profiles using JWT components safely.</p>
+                    <h3 class="font-bold text-slate-900 text-base">Make Your Basket</h3>
+                    <span class="text-xs font-mono text-emerald-600 block mt-0.5 mb-3">MERN Stack / MySQL Engine</span>
+                    <p class="text-xs text-slate-600 leading-relaxed">Constructed e-commerce database transaction logic balancing peak execution scaling of 50 orders/min while locking profiles using JWT components safely.</p>
                 </div>
-                <div class="grid grid-cols-2 gap-2 mt-6 pt-4 border-t border-gray-100">
-                    <a href="https://e-commeerse.vercel.app/" target="_blank" class="py-2 bg-silicon-emerald text-white font-bold rounded-lg text-center text-xs hover:bg-silicon-emeraldHover transition-colors">Live Link</a>
-                    <a href="https://github.com/Abhigit2504" target="_blank" class="py-2 bg-white hover:bg-gray-50 text-silicon-textPrimary font-semibold rounded-lg text-center text-xs border border-gray-300 transition-colors"><i class="fab fa-github"></i> Source</a>
+                <div class="grid grid-cols-2 gap-2 mt-5 pt-3 border-t border-slate-100">
+                    <a href="https://e-commeerse.vercel.app/" target="_blank" class="py-2 bg-emerald-500 text-white font-bold rounded-lg text-center text-xs hover:bg-emerald-600 transition">Live Portal</a>
+                    <a href="https://github.com/Abhigit2504" target="_blank" class="py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium rounded-lg text-center text-xs transition"><i class="fab fa-github"></i> Source</a>
                 </div>
             </div>
 
-            <div class="premium-card p-5 rounded-2xl flex flex-col justify-between">
+            <div class="bg-white border border-slate-200 p-5 rounded-2xl flex flex-col justify-between shadow-sm hover:border-emerald-500/50 transition-all duration-300">
                 <div>
-                    <h3 class="font-bold text-silicon-textPrimary text-base">JobDone Portal</h3>
-                    <span class="text-xs font-mono text-silicon-emerald block mt-0.5 mb-3 font-semibold">MongoDB / Express / Node.js Engine</span>
-                    <p class="text-xs text-silicon-textSecondary leading-relaxed">Constructed REST API schema routes managing asynchronous file structures for multi-tenant portal parameters smoothly.</p>
+                    <h3 class="font-bold text-slate-900 text-base">JobDone Portal</h3>
+                    <span class="text-xs font-mono text-emerald-600 block mt-0.5 mb-3">MongoDB / Express / Node.js</span>
+                    <p class="text-xs text-slate-600 leading-relaxed">Constructed REST API schema routes managing asynchronous file structures for multi-tenant portal parameters smoothly.</p>
                 </div>
-                <div class="grid grid-cols-2 gap-2 mt-6 pt-4 border-t border-gray-100">
-                    <a href="https://job-done-rkn4.vercel.app/" target="_blank" class="py-2 bg-silicon-emerald text-white font-bold rounded-lg text-center text-xs hover:bg-silicon-emeraldHover transition-colors">Live Link</a>
-                    <a href="https://github.com/Abhigit2504" target="_blank" class="py-2 bg-white hover:bg-gray-50 text-silicon-textPrimary font-semibold rounded-lg text-center text-xs border border-gray-300 transition-colors"><i class="fab fa-github"></i> Source</a>
+                <div class="grid grid-cols-2 gap-2 mt-5 pt-3 border-t border-slate-100">
+                    <a href="https://job-done-rkn4.vercel.app/" target="_blank" class="py-2 bg-emerald-500 text-white font-bold rounded-lg text-center text-xs hover:bg-emerald-600 transition">Live Portal</a>
+                    <a href="https://github.com/Abhigit2504" target="_blank" class="py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium rounded-lg text-center text-xs transition"><i class="fab fa-github"></i> Source</a>
                 </div>
             </div>
 
-            <div class="premium-card p-5 rounded-2xl flex flex-col justify-between">
+            <div class="bg-white border border-slate-200 p-5 rounded-2xl flex flex-col justify-between shadow-sm hover:border-emerald-500/50 transition-all duration-300">
                 <div>
-                    <h3 class="font-bold text-silicon-textPrimary text-base">Heavy Machinery Monitoring</h3>
-                    <span class="text-xs font-mono text-silicon-emerald block mt-0.5 mb-3 font-semibold">React Native / Django REST APIs</span>
-                    <p class="text-xs text-silicon-textSecondary leading-relaxed">Designed industrial monitoring dashboards improving operational monitoring efficiency by 50% using real-time telemetry visualization schemas.</p>
+                    <h3 class="font-bold text-slate-900 text-base">Heavy Machinery Monitoring</h3>
+                    <span class="text-xs font-mono text-emerald-600 block mt-0.5 mb-3">React Native / Django Backend</span>
+                    <p class="text-xs text-slate-600 leading-relaxed">Built real-time industrial telemetry monitoring with dynamic sync structures, mapping live thresholds with 99% telemetry accuracy pipelines.</p>
                 </div>
-                <div class="mt-6 pt-4 border-t border-gray-100">
-                    <a href="https://github.com/Abhigit2504" target="_blank" class="w-full block py-2 bg-white hover:bg-gray-50 text-silicon-textSecondary font-semibold rounded-lg text-center text-xs border border-gray-300 transition-colors"><i class="fab fa-github"></i> View Repo Infrastructure</a>
+                <div class="mt-5 pt-3 border-t border-slate-100">
+                    <a href="https://github.com/Abhigit2504" target="_blank" class="w-full block py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 font-medium rounded-lg text-center text-xs transition"><i class="fab fa-github"></i> Source Code Only</a>
                 </div>
             </div>
 
-            <div class="premium-card p-5 rounded-2xl flex flex-col justify-between">
+            <div class="bg-white border border-slate-200 p-5 rounded-2xl flex flex-col justify-between shadow-sm hover:border-emerald-500/50 transition-all duration-300">
                 <div>
-                    <h3 class="font-bold text-silicon-textPrimary text-base">IoT Device Control (sEMG Sensor)</h3>
-                    <span class="text-xs font-mono text-silicon-emerald block mt-0.5 mb-3 font-semibold">Embedded Systems / Signal Processing</span>
-                    <p class="text-xs text-silicon-textSecondary leading-relaxed">Engineered human-machine peripheral hardware running muscle classification streams inside 6-month cycles, scaling metrics to 95% classification precision bounds.</p>
+                    <h3 class="font-bold text-slate-900 text-base">sEMG Gesture Controller</h3>
+                    <span class="text-xs font-mono text-emerald-600 block mt-0.5 mb-3">Embedded Systems / Signals</span>
+                    <p class="text-xs text-slate-600 leading-relaxed">Engineered human-machine peripheral hardware running muscle classification streams inside 6-month cycles, scaling metrics to 95% classification precision bounds.</p>
                 </div>
-                <div class="mt-6 pt-4 border-t border-gray-100">
-                    <a href="https://github.com/Abhigit2504" target="_blank" class="w-full block py-2 bg-white hover:bg-gray-50 text-silicon-textSecondary font-semibold rounded-lg text-center text-xs border border-gray-300 transition-colors"><i class="fab fa-github"></i> View Repo Infrastructure</a>
+                <div class="mt-5 pt-3 border-t border-slate-100">
+                    <a href="https://github.com/Abhigit2504" target="_blank" class="w-full block py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 font-medium rounded-lg text-center text-xs transition"><i class="fab fa-github"></i> Source Code Only</a>
                 </div>
             </div>
 
-            <div class="premium-card p-5 rounded-2xl flex flex-col justify-between">
+            <div class="bg-white border border-slate-200 p-5 rounded-2xl flex flex-col justify-between shadow-sm hover:border-emerald-500/50 transition-all duration-300">
                 <div>
-                    <h3 class="font-bold text-silicon-textPrimary text-base">Water Quality Tracker</h3>
-                    <span class="text-xs font-mono text-silicon-emerald block mt-0.5 mb-3 font-semibold">Embedded C++ / I2C Buses Node</span>
-                    <p class="text-xs text-silicon-textSecondary leading-relaxed">Optimized multi-sensor telemetry processing paths inside I2C controller systems, driving a validated 20% reduction across localized wastewater parameters.</p>
+                    <h3 class="font-bold text-slate-900 text-base">Water Quality Tracker</h3>
+                    <span class="text-xs font-mono text-emerald-600 block mt-0.5 mb-3">Embedded C++ / I2C Buses</span>
+                    <p class="text-xs text-slate-600 leading-relaxed">Optimized multi-sensor telemetry processing paths inside I2C controller systems, driving a validated 20% reduction across localized wastewater parameters.</p>
                 </div>
-                <div class="mt-6 pt-4 border-t border-gray-100">
-                    <a href="https://github.com/Abhigit2504" target="_blank" class="w-full block py-2 bg-white hover:bg-gray-50 text-silicon-textSecondary font-semibold rounded-lg text-center text-xs border border-gray-300 transition-colors"><i class="fab fa-github"></i> View Repo Infrastructure</a>
+                <div class="mt-5 pt-3 border-t border-slate-100">
+                    <a href="https://github.com/Abhigit2504" target="_blank" class="w-full block py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 font-medium rounded-lg text-center text-xs transition"><i class="fab fa-github"></i> Source Code Only</a>
                 </div>
             </div>
 
-            <div class="premium-card p-5 rounded-2xl flex flex-col justify-between">
+            <div class="bg-white border border-slate-200 p-5 rounded-2xl flex flex-col justify-between shadow-sm hover:border-emerald-500/50 transition-all duration-300">
                 <div>
-                    <h3 class="font-bold text-silicon-textPrimary text-base">Blood Donation System</h3>
-                    <span class="text-xs font-mono text-silicon-emerald block mt-0.5 mb-3 font-semibold">OOP Logic / C++ Core Structural Models</span>
-                    <p class="text-xs text-silicon-textSecondary leading-relaxed">Engineered explicit structural models deploying local transactional file streams safely mapped through interactive console layer interfaces securely.</p>
+                    <h3 class="font-bold text-slate-900 text-base">Blood Donation System</h3>
+                    <span class="text-xs font-mono text-emerald-600 block mt-0.5 mb-3">OOP / System Design / C++</span>
+                    <p class="text-xs text-slate-600 leading-relaxed">Engineered explicit structural models deploying local transactional file streams safely mapped through interactive console layer interfaces securely.</p>
                 </div>
-                <div class="mt-6 pt-4 border-t border-gray-100">
-                    <a href="https://github.com/Abhigit2504" target="_blank" class="w-full block py-2 bg-white hover:bg-gray-50 text-silicon-textSecondary font-semibold rounded-lg text-center text-xs border border-gray-300 transition-colors"><i class="fab fa-github"></i> View Repo Infrastructure</a>
+                <div class="mt-5 pt-3 border-t border-slate-100">
+                    <a href="https://github.com/Abhigit2504" target="_blank" class="w-full block py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 font-medium rounded-lg text-center text-xs transition"><i class="fab fa-github"></i> Source Code Only</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-white border-t border-gray-200 py-12 text-center text-gray-500 text-[11px] font-mono tracking-wider shadow-inner">
-        <div class="max-w-7xl mx-auto px-4 space-y-2">
-            <p class="text-silicon-textSecondary font-semibold">Open to Technical Interviews & Engineering Core Onboarding Tracks</p>
-            <p>&copy; 2026 Abhivardhan Tippani. Systems Architecture Framework.</p>
+    <div id="rtl-modal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white border border-slate-200 w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl relative max-h-[90vh] flex flex-col">
+            <div class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex justify-between items-center">
+                <div>
+                    <h3 class="text-base font-mono font-bold text-slate-900">Telemetry Unit // RTL Synthesis Closure</h3>
+                    <p class="text-xs font-mono text-sky-700 mt-0.5">Project: iguana Block | Technology: TSMC 28nm | Clock: 91 MHz</p>
+                </div>
+                <button onclick="closeModal('rtl-modal')" class="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-full bg-white flex items-center justify-center border border-slate-200 font-mono text-xs">X</button>
+            </div>
+            <div class="p-6 overflow-y-auto space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-slate-50/50 p-5 rounded-xl border border-slate-200">
+                        <h4 class="text-xs font-mono uppercase text-slate-500 mb-4 font-bold tracking-wide">Key Responsibilities</h4>
+                        <ul class="text-xs text-slate-700 space-y-3 list-inside list-disc leading-relaxed">
+                            <li>Read and thoroughly analyzed front-end RTL design structures alongside industry target technology libraries.</li>
+                            <li>Created and validated explicit SDC constraints including primary clocks, input/output operational delays, false paths, multicycle pathways, and specific clock uncertainties.</li>
+                            <li>Executed systematic health checks utilizing check_design and check_timing routines to secure data integrity.</li>
+                            <li>Addressed and resolved strict Design Rule Violations (DRV) including max transition bounds, max capacitance thresholds, and max fanout restrictions for proper timing convergence.</li>
+                            <li>Generated gate-level netlists and comprehensive QoR performance reports for cross-functional evaluations.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-sky-50/30 p-5 rounded-xl border border-sky-100">
+                        <h4 class="text-xs font-mono uppercase text-sky-700 mb-4 font-bold tracking-wide">Engineered Achievements</h4>
+                        <ul class="text-xs text-slate-700 space-y-3 leading-relaxed">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fas fa-microchip text-sky-500 mt-0.5 text-[11px]"></i> 
+                                <span>Owned full layout target constraints across 6 primary clocks and 2 high-performance generated clocks operating at 91 MHz.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fas fa-microchip text-sky-500 mt-0.5 text-[11px]"></i> 
+                                <span>Achieved 100% comprehensive setup timing closure parameters with zero unresolved architecture path violations.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fas fa-microchip text-sky-500 mt-0.5 text-[11px]"></i> 
+                                <span>Mitigated architectural layout path constraints early to boost global optimization flow routines by 40%.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fas fa-microchip text-sky-500 mt-0.5 text-[11px]"></i> 
+                                <span>Optimized design rules effectively to secure robust timing margins across 353K synthesis logic gates.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pd-modal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white border border-slate-200 w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl relative max-h-[90vh] flex flex-col">
+            <div class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex justify-between items-center">
+                <div>
+                    <h3 class="text-base font-mono font-bold text-slate-900">Telemetry Unit // RTL-to-GDSII Signoff</h3>
+                    <p class="text-xs font-mono text-sky-700 mt-0.5">Project: iguana Block | EDA Engine: Synopsys ICC2 Layout Suite</p>
+                </div>
+                <button onclick="closeModal('pd-modal')" class="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-full bg-white flex items-center justify-center border border-slate-200 font-mono text-xs">X</button>
+            </div>
+            <div class="p-6 overflow-y-auto space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-slate-50/50 p-5 rounded-xl border border-slate-200">
+                        <h4 class="text-xs font-mono uppercase text-slate-500 mb-4 font-bold tracking-wide">Key Responsibilities</h4>
+                        <ul class="text-xs text-slate-700 space-y-3 list-inside list-disc leading-relaxed">
+                            <li>Managed complete macro layout architecture, floorplanning parameters, optimal channel spacing strategies, and target port placement coordinates.</li>
+                            <li>Engineered highly robust power distribution grid configurations (PDN) using localized power rings and straps networks.</li>
+                            <li>Conducted advanced cell placement routines, path grouping allocations, and congestion tuning loops using detailed fly-line analysis engines.</li>
+                            <li>Configured custom Clock Tree Synthesis (CTS) architectures to ensure uniform global clock distribution.</li>
+                            <li>Executed post-route detailed ECO structural layout adjustments to achieve absolute physical layout signoff.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-sky-50/30 p-5 rounded-xl border border-sky-100">
+                        <h4 class="text-xs font-mono uppercase text-sky-700 mb-4 font-bold tracking-wide">Engineered Achievements</h4>
+                        <ul class="text-xs text-slate-700 space-y-3 leading-relaxed">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fas fa-microchip text-sky-500 mt-0.5 text-[11px]"></i> 
+                                <span>Streamlined channel spacing rules, directly reducing layout routing congestion hotspots by 30%.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fas fa-microchip text-sky-500 mt-0.5 text-[11px]"></i> 
+                                <span>Boosted operational static IR drop margins by 20% while upholding maximum design EM reliability.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fas fa-microchip text-sky-500 mt-0.5 text-[11px]"></i> 
+                                <span>Balanced tree layouts successfully to eliminate 95% of active critical setup and hold violation paths.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fas fa-microchip text-sky-500 mt-0.5 text-[11px]"></i> 
+                                <span>Integrated complex cell configurations (tap, filler, decap, and boundary cells) to secure 100% clean DRC/LVS physical signoff.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-slate-900 border-t border-slate-800 py-10 text-center text-slate-400 text-[11px] font-mono tracking-wider">
+        <div class="max-w-6xl mx-auto px-4 space-y-2">
+            <p>&copy; 2026 Abhivardhan Tippani. Powered by Synopsys Core Architectures.</p>
         </div>
     </footer>
 
+    <script>
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+    </script>
 </body>
 </html>
