@@ -4,50 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abhivardhan Tippani | VLSI Physical Design Engineer</title>
-    <!-- Tailwind CSS via CDN -->
+    <!-- Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for Icons -->
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* ----- refined color palette ----- */
+        /* ----- refined color palette (dark/light) ----- */
         :root {
-            --bg-primary: #f6f9fc;
+            --bg-primary: #f3f6fc;
             --bg-secondary: #ffffff;
             --bg-card: #ffffff;
             --text-primary: #0b1a2f;
-            --text-secondary: #2c3e50;
-            --text-muted: #5a6c7e;
-            --border-light: #e2e8f0;
-            --border-focus: #b0c4de;
-            --accent: #2563eb;
-            --accent-light: #dbeafe;
-            --accent-glow: rgba(37, 99, 235, 0.15);
-            --gradient-start: #1e3a5f;
-            --gradient-end: #2563eb;
-            --shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-            --shadow-hover: 0 12px 40px rgba(37, 99, 235, 0.12);
+            --text-secondary: #1f3a5f;
+            --text-muted: #4a5f7a;
+            --border-light: #dce3ed;
+            --border-focus: #8ba3c7;
+            --accent: #1f5f8f;
+            --accent-light: #dce8f5;
+            --accent-glow: rgba(31, 95, 143, 0.15);
+            --gradient-start: #1a3a5c;
+            --gradient-end: #2a6b9e;
+            --shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+            --shadow-hover: 0 12px 40px rgba(31, 95, 143, 0.12);
         }
 
         .dark {
             --bg-primary: #0a0f1a;
-            --bg-secondary: #111827;
-            --bg-card: #1a2332;
-            --text-primary: #e8edf5;
-            --text-secondary: #c8d0dc;
-            --text-muted: #8a9bb0;
-            --border-light: #28344a;
-            --border-focus: #3b4d6b;
-            --accent: #3b82f6;
-            --accent-light: #1e2a45;
-            --accent-glow: rgba(59, 130, 246, 0.18);
+            --bg-secondary: #111b2b;
+            --bg-card: #172235;
+            --text-primary: #e4eaf3;
+            --text-secondary: #bcc9db;
+            --text-muted: #7a8ba5;
+            --border-light: #26344a;
+            --border-focus: #3b5070;
+            --accent: #4a8bc4;
+            --accent-light: #1e2f47;
+            --accent-glow: rgba(74, 139, 196, 0.2);
             --gradient-start: #0f1a2e;
-            --gradient-end: #1e3a5f;
-            --shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-            --shadow-hover: 0 12px 40px rgba(59, 130, 246, 0.15);
+            --gradient-end: #1f3f62;
+            --shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+            --shadow-hover: 0 12px 40px rgba(74, 139, 196, 0.15);
         }
 
         * {
-            transition: background-color 0.35s ease, border-color 0.35s ease, color 0.25s ease, box-shadow 0.35s ease, transform 0.3s ease;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.25s ease, box-shadow 0.35s ease, transform 0.3s ease;
         }
 
         body {
@@ -56,13 +56,13 @@
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
         }
 
-        /* premium glass card */
+        /* cards */
         .glass-card {
             background: var(--bg-card);
             border: 1px solid var(--border-light);
             border-radius: 1.5rem;
             box-shadow: var(--shadow);
-            backdrop-filter: blur(4px);
+            backdrop-filter: blur(2px);
             transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
         }
         .glass-card:hover {
@@ -71,25 +71,27 @@
             transform: translateY(-4px);
         }
 
-        .glass-card-soft {
+        .project-card {
             background: var(--bg-card);
             border: 1px solid var(--border-light);
             border-radius: 1.25rem;
+            padding: 1.5rem;
             box-shadow: var(--shadow);
+            transition: all 0.35s ease;
         }
-        .glass-card-soft:hover {
-            border-color: var(--border-focus);
+        .project-card:hover {
+            border-color: var(--accent);
             box-shadow: var(--shadow-hover);
-            transform: translateY(-3px);
+            transform: translateY(-5px);
         }
 
         .skill-tag {
             background: var(--accent-light);
             color: var(--accent);
             border: 1px solid transparent;
-            padding: 0.2rem 0.7rem;
+            padding: 0.2rem 0.8rem;
             border-radius: 999px;
-            font-size: 0.65rem;
+            font-size: 0.7rem;
             font-weight: 600;
             letter-spacing: 0.02em;
             transition: all 0.25s ease;
@@ -98,14 +100,37 @@
             background: var(--accent);
             color: #fff;
             border-color: var(--accent);
-            box-shadow: 0 0 12px var(--accent-glow);
+            box-shadow: 0 0 14px var(--accent-glow);
         }
 
-        .accent-badge {
-            background: var(--accent-light);
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            border: none;
+            padding: 0.6rem 1.4rem;
+            border-radius: 0.75rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px var(--accent-glow);
+        }
+        .btn-primary:hover {
+            background: var(--gradient-end);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px var(--accent-glow);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border-light);
+            padding: 0.6rem 1.4rem;
+            border-radius: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        .btn-outline:hover {
+            border-color: var(--accent);
             color: var(--accent);
-            border: 1px solid var(--accent);
-            font-weight: 600;
+            background: var(--accent-light);
         }
 
         .theme-toggle-btn {
@@ -125,60 +150,6 @@
             background: var(--accent);
             color: #fff;
             border-color: var(--accent);
-            transform: scale(1.04);
-        }
-
-        .project-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-light);
-            border-radius: 1.5rem;
-            padding: 1.5rem;
-            box-shadow: var(--shadow);
-            transition: all 0.35s ease;
-        }
-        .project-card:hover {
-            border-color: var(--accent);
-            box-shadow: var(--shadow-hover);
-            transform: translateY(-5px);
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: #fff;
-            font-weight: 700;
-            border: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 0.75rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 14px var(--accent-glow);
-        }
-        .btn-primary:hover {
-            background: var(--gradient-end);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px var(--accent-glow);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--text-primary);
-            border: 1px solid var(--border-light);
-            padding: 0.6rem 1.2rem;
-            border-radius: 0.75rem;
-            transition: all 0.3s ease;
-        }
-        .btn-outline:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            background: var(--accent-light);
-        }
-
-        .nav-link {
-            color: var(--text-muted);
-            font-weight: 500;
-            transition: color 0.25s ease;
-        }
-        .nav-link:hover {
-            color: var(--accent);
         }
 
         .section-title {
@@ -206,7 +177,6 @@
             box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
         }
 
-        /* badge pulse */
         .pulse-dot {
             width: 8px;
             height: 8px;
@@ -216,17 +186,37 @@
         }
         @keyframes pulse {
             0% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(0.85); }
+            50% { opacity: 0.4; transform: scale(0.85); }
             100% { opacity: 1; transform: scale(1); }
         }
 
-        /* hero image border */
-        .hero-img-border {
-            border: 2px solid var(--accent);
-            box-shadow: 0 0 40px var(--accent-glow);
+        .nav-link {
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: color 0.25s ease;
+        }
+        .nav-link:hover {
+            color: var(--accent);
         }
 
-        /* scrollbar */
+        /* flow steps for VLSI */
+        .flow-step {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: 0.75rem;
+            padding: 0.6rem 0.8rem;
+            text-align: center;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+        .flow-step span {
+            display: block;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 0.75rem;
+        }
+
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: var(--bg-primary); }
         ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 999px; }
@@ -234,8 +224,8 @@
 </head>
 <body>
 
-    <!-- NAVIGATION -->
-    <nav class="sticky top-0 z-50 bg-[var(--bg-secondary)]/80 backdrop-blur-xl border-b border-[var(--border-light)] shadow-sm transition-colors duration-300">
+    <!-- NAV -->
+    <nav class="sticky top-0 z-50 bg-[var(--bg-secondary)]/80 backdrop-blur-xl border-b border-[var(--border-light)] shadow-sm">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center gap-4">
                 <span class="text-lg font-black tracking-tight text-[var(--text-primary)]">AT<span class="text-[var(--accent)]">//PD</span></span>
@@ -276,18 +266,18 @@
             </p>
 
             <!-- Education -->
-            <div class="glass-card-soft p-4 inline-flex flex-col sm:flex-row items-start sm:items-center gap-4 text-left max-w-xl w-full relative overflow-hidden mb-8">
+            <div class="glass-card p-4 inline-flex flex-col sm:flex-row items-start sm:items-center gap-4 text-left max-w-xl w-full relative overflow-hidden mb-8">
                 <div class="absolute top-0 left-0 w-1 h-full bg-[var(--accent)]"></div>
                 <div class="p-3 rounded-xl bg-[var(--accent-light)] text-[var(--accent)]">
                     <i class="fas fa-graduation-cap text-xl"></i>
                 </div>
                 <div>
                     <h4 class="text-sm font-bold text-[var(--text-primary)]">IIIT Sri City</h4>
-                    <p class="text-xs text-[var(--accent)] font-medium">B.Tech ECE • Dec 2021 – Aug 2025</p>
+                    <p class="text-xs text-[var(--accent)] font-medium">B.Tech ECE • 2021 – 2025</p>
                 </div>
                 <div class="sm:ml-4">
                     <h4 class="text-sm font-bold text-[var(--text-primary)]">Sumedha IT, Hyderabad</h4>
-                    <p class="text-xs text-[var(--accent)] font-medium">PD Certified • Sep 2025 – Aug 2026</p>
+                    <p class="text-xs text-[var(--accent)] font-medium">PD Certified • 2025 – 2026</p>
                 </div>
             </div>
 
@@ -309,7 +299,7 @@
     <section id="skills" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-b border-[var(--border-light)]">
         <div class="mb-10">
             <h2 class="section-title"><span></span> Technical Specifications</h2>
-            <p class="text-xs text-[var(--text-muted)] font-mono mt-1 uppercase tracking-widest">Validated skill matrices for ATS parsing</p>
+            <p class="text-xs text-[var(--text-muted)] font-mono mt-1 uppercase tracking-widest">Validated skill matrices</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="glass-card p-6 flex flex-col">
@@ -432,7 +422,7 @@
                 </button>
             </div>
 
-            <!-- Physical Design & RTL-to-GDSII (full width) -->
+            <!-- Physical Design & RTL-to-GDSII (full width) with flow steps -->
             <div class="project-card flex flex-col justify-between md:col-span-2">
                 <div>
                     <div class="flex justify-between items-center mb-3">
@@ -440,16 +430,24 @@
                         <span class="pulse-dot"></span>
                     </div>
                     <h3 class="text-xl font-bold text-[var(--text-primary)] mb-2">Physical Design & RTL-to-GDSII Implementation</h3>
-                    <p class="text-sm text-[var(--text-secondary)] leading-relaxed mb-3">
+                    <p class="text-sm text-[var(--text-secondary)] leading-relaxed mb-4">
                         Full implementation: floorplan, standard cell placement, CTS, routing, STA, ECO, DRC/LVS clean signoff.
                     </p>
+                    <!-- 5-step flow as key points -->
+                    <div class="grid grid-cols-5 gap-2 mb-4">
+                        <div class="flow-step"><span>1. Floorplan</span>Utilization, aspect, ports</div>
+                        <div class="flow-step"><span>2. Power</span>Rings & straps</div>
+                        <div class="flow-step"><span>3. Placement</span>Std. cell opt.</div>
+                        <div class="flow-step"><span>4. CTS</span>Skew tuning</div>
+                        <div class="flow-step"><span>5. Signoff</span>DRC/LVS/ECO</div>
+                    </div>
                     <div class="flex flex-wrap gap-2 text-xs font-mono text-[var(--text-muted)]">
                         <span><i class="fas fa-layer-group mr-1"></i> 9 Metal Layers</span>
                         <span>•</span>
                         <span><i class="fas fa-check-circle mr-1"></i> DRC/LVS Clean</span>
                     </div>
                 </div>
-                <button onclick="openModal('pd-modal')" class="btn-primary w-full mt-5 text-xs uppercase tracking-wider flex items-center justify-center gap-2 py-2.5">
+                <button onclick="openModal('pd-modal')" class="btn-primary w-full mt-4 text-xs uppercase tracking-wider flex items-center justify-center gap-2 py-2.5">
                     More Details <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
@@ -460,81 +458,86 @@
     <section id="software-projects" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div class="mb-10">
             <h2 class="section-title"><span></span> Full-Stack & Systems Engineering</h2>
-            <p class="text-xs text-[var(--text-muted)] font-mono mt-1 uppercase tracking-widest">Secondary development deployments</p>
+            <p class="text-xs text-[var(--text-muted)] font-mono mt-1 uppercase tracking-widest">Click for detailed project insights</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
             <!-- Make Your Basket -->
-            <div class="glass-card p-5 flex flex-col justify-between">
+            <div class="project-card flex flex-col justify-between">
                 <div>
                     <h3 class="font-bold text-[var(--text-primary)] text-base">Make Your Basket</h3>
                     <span class="text-xs font-mono text-[var(--accent)] block mt-0.5 mb-2">MERN / MySQL</span>
-                    <p class="text-sm text-[var(--text-secondary)] leading-relaxed">E-commerce with JWT auth, 50 orders/min scaling.</p>
+                    <p class="text-sm text-[var(--text-secondary)] leading-relaxed">E-commerce with JWT auth, 50 orders/min scaling. 98% basket completion.</p>
                 </div>
                 <div class="grid grid-cols-2 gap-2 mt-4 pt-3 border-t border-[var(--border-light)]">
                     <a href="https://e-commeerse.vercel.app/" target="_blank" class="btn-primary text-center text-xs py-1.5">Live</a>
-                    <a href="https://github.com/Abhigit2504" target="_blank" class="btn-outline text-center text-xs py-1.5"><i class="fab fa-github"></i> Source</a>
+                    <button onclick="openModal('basket-modal')" class="btn-outline text-center text-xs py-1.5">Details</button>
                 </div>
             </div>
             <!-- JobDone -->
-            <div class="glass-card p-5 flex flex-col justify-between">
+            <div class="project-card flex flex-col justify-between">
                 <div>
                     <h3 class="font-bold text-[var(--text-primary)] text-base">JobDone Portal</h3>
                     <span class="text-xs font-mono text-[var(--accent)] block mt-0.5 mb-2">MongoDB / Express / Node</span>
-                    <p class="text-sm text-[var(--text-secondary)] leading-relaxed">REST API with multi-tenant file structures.</p>
+                    <p class="text-sm text-[var(--text-secondary)] leading-relaxed">REST API job portal with dashboards, resume uploads, real-time updates.</p>
                 </div>
                 <div class="grid grid-cols-2 gap-2 mt-4 pt-3 border-t border-[var(--border-light)]">
                     <a href="https://job-done-rkn4.vercel.app/" target="_blank" class="btn-primary text-center text-xs py-1.5">Live</a>
-                    <a href="https://github.com/Abhigit2504" target="_blank" class="btn-outline text-center text-xs py-1.5"><i class="fab fa-github"></i> Source</a>
+                    <button onclick="openModal('jobdone-modal')" class="btn-outline text-center text-xs py-1.5">Details</button>
                 </div>
             </div>
             <!-- Heavy Machinery -->
-            <div class="glass-card p-5 flex flex-col justify-between">
+            <div class="project-card flex flex-col justify-between">
                 <div>
                     <h3 class="font-bold text-[var(--text-primary)] text-base">Heavy Machinery Monitor</h3>
                     <span class="text-xs font-mono text-[var(--accent)] block mt-0.5 mb-2">React Native / Django</span>
-                    <p class="text-sm text-[var(--text-secondary)] leading-relaxed">Real-time telemetry with 99% accuracy.</p>
+                    <p class="text-sm text-[var(--text-secondary)] leading-relaxed">Real-time telemetry with 99% accuracy, animated dashboards.</p>
                 </div>
-                <div class="mt-4 pt-3 border-t border-[var(--border-light)]">
-                    <a href="https://github.com/Abhigit2504" target="_blank" class="btn-outline w-full text-center text-xs py-1.5 block"><i class="fab fa-github"></i> Source Code</a>
+                <div class="grid grid-cols-2 gap-2 mt-4 pt-3 border-t border-[var(--border-light)]">
+                    <a href="https://github.com/Abhigit2504" target="_blank" class="btn-outline text-center text-xs py-1.5"><i class="fab fa-github"></i> Code</a>
+                    <button onclick="openModal('machinery-modal')" class="btn-outline text-center text-xs py-1.5">Details</button>
                 </div>
             </div>
             <!-- sEMG -->
-            <div class="glass-card p-5 flex flex-col justify-between">
+            <div class="project-card flex flex-col justify-between">
                 <div>
                     <h3 class="font-bold text-[var(--text-primary)] text-base">sEMG Gesture Controller</h3>
                     <span class="text-xs font-mono text-[var(--accent)] block mt-0.5 mb-2">Embedded / Signals</span>
-                    <p class="text-sm text-[var(--text-secondary)] leading-relaxed">95% classification accuracy, muscle-stream control.</p>
+                    <p class="text-sm text-[var(--text-secondary)] leading-relaxed">95% classification accuracy, muscle-stream control for IoT.</p>
                 </div>
-                <div class="mt-4 pt-3 border-t border-[var(--border-light)]">
-                    <a href="https://github.com/Abhigit2504" target="_blank" class="btn-outline w-full text-center text-xs py-1.5 block"><i class="fab fa-github"></i> Source Code</a>
+                <div class="grid grid-cols-2 gap-2 mt-4 pt-3 border-t border-[var(--border-light)]">
+                    <a href="https://github.com/Abhigit2504" target="_blank" class="btn-outline text-center text-xs py-1.5"><i class="fab fa-github"></i> Code</a>
+                    <button onclick="openModal('semg-modal')" class="btn-outline text-center text-xs py-1.5">Details</button>
                 </div>
             </div>
             <!-- Water Quality -->
-            <div class="glass-card p-5 flex flex-col justify-between">
+            <div class="project-card flex flex-col justify-between">
                 <div>
                     <h3 class="font-bold text-[var(--text-primary)] text-base">Water Quality Tracker</h3>
                     <span class="text-xs font-mono text-[var(--accent)] block mt-0.5 mb-2">Embedded C++ / I2C</span>
-                    <p class="text-sm text-[var(--text-secondary)] leading-relaxed">Multi-sensor I2C, 20% wastewater reduction.</p>
+                    <p class="text-sm text-[var(--text-secondary)] leading-relaxed">Multi-sensor I2C, 20% water waste reduction, real-time alerts.</p>
                 </div>
-                <div class="mt-4 pt-3 border-t border-[var(--border-light)]">
-                    <a href="https://github.com/Abhigit2504" target="_blank" class="btn-outline w-full text-center text-xs py-1.5 block"><i class="fab fa-github"></i> Source Code</a>
+                <div class="grid grid-cols-2 gap-2 mt-4 pt-3 border-t border-[var(--border-light)]">
+                    <a href="https://github.com/Abhigit2504" target="_blank" class="btn-outline text-center text-xs py-1.5"><i class="fab fa-github"></i> Code</a>
+                    <button onclick="openModal('water-modal')" class="btn-outline text-center text-xs py-1.5">Details</button>
                 </div>
             </div>
             <!-- Blood Donation -->
-            <div class="glass-card p-5 flex flex-col justify-between">
+            <div class="project-card flex flex-col justify-between">
                 <div>
                     <h3 class="font-bold text-[var(--text-primary)] text-base">Blood Donation System</h3>
                     <span class="text-xs font-mono text-[var(--accent)] block mt-0.5 mb-2">OOP / C++</span>
-                    <p class="text-sm text-[var(--text-secondary)] leading-relaxed">Console-based transactional file streams.</p>
+                    <p class="text-sm text-[var(--text-secondary)] leading-relaxed">CLI-based donor/patient/admin management with file streams.</p>
                 </div>
-                <div class="mt-4 pt-3 border-t border-[var(--border-light)]">
-                    <a href="https://github.com/Abhigit2504" target="_blank" class="btn-outline w-full text-center text-xs py-1.5 block"><i class="fab fa-github"></i> Source Code</a>
+                <div class="grid grid-cols-2 gap-2 mt-4 pt-3 border-t border-[var(--border-light)]">
+                    <a href="https://github.com/Abhigit2504" target="_blank" class="btn-outline text-center text-xs py-1.5"><i class="fab fa-github"></i> Code</a>
+                    <button onclick="openModal('blood-modal')" class="btn-outline text-center text-xs py-1.5">Details</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MODALS -->
+    <!-- ===== MODALS ===== -->
+
     <!-- i gauana -->
     <div id="igauana-modal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="modal-content w-full max-w-3xl max-h-[90vh] overflow-y-auto p-6">
@@ -605,7 +608,7 @@
         </div>
     </div>
 
-    <!-- PD Modal -->
+    <!-- PD Modal (with flow steps) -->
     <div id="pd-modal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="modal-content w-full max-w-3xl max-h-[90vh] overflow-y-auto p-6">
             <div class="flex justify-between items-center border-b border-[var(--border-light)] pb-4 mb-4">
@@ -621,12 +624,13 @@
                 <div class="bg-[var(--bg-primary)] p-2 rounded-lg border border-[var(--border-light)]"><span class="text-[var(--text-muted)] block">Clock</span><span class="font-bold text-[var(--text-primary)]">Single Tree</span></div>
                 <div class="bg-[var(--bg-primary)] p-2 rounded-lg border border-[var(--border-light)]"><span class="text-[var(--text-muted)] block">Arch</span><span class="font-bold text-[var(--text-primary)]">Macro-Based</span></div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-2 text-xs font-mono mb-4">
-                <div class="bg-[var(--bg-primary)] p-2 rounded-lg border border-[var(--border-light)]"><span class="font-bold block">1. Floorplan</span>Utilization, aspect, ports</div>
-                <div class="bg-[var(--bg-primary)] p-2 rounded-lg border border-[var(--border-light)]"><span class="font-bold block">2. Power</span>Rings & straps</div>
-                <div class="bg-[var(--bg-primary)] p-2 rounded-lg border border-[var(--border-light)]"><span class="font-bold block">3. Placement</span>Std. cell opt.</div>
-                <div class="bg-[var(--bg-primary)] p-2 rounded-lg border border-[var(--border-light)]"><span class="font-bold block">4. CTS</span>Skew tuning</div>
-                <div class="bg-[var(--bg-primary)] p-2 rounded-lg border border-[var(--border-light)]"><span class="font-bold block">5. Signoff</span>DRC/LVS/ECO</div>
+            <!-- Flow steps as key points -->
+            <div class="grid grid-cols-5 gap-2 mb-4">
+                <div class="flow-step"><span>1. Floorplan</span>Utilization, aspect, ports</div>
+                <div class="flow-step"><span>2. Power</span>Rings & straps</div>
+                <div class="flow-step"><span>3. Placement</span>Std. cell opt.</div>
+                <div class="flow-step"><span>4. CTS</span>Skew tuning</div>
+                <div class="flow-step"><span>5. Signoff</span>DRC/LVS/ECO</div>
             </div>
             <div class="bg-[var(--accent-light)]/30 p-4 rounded-xl border border-[var(--accent)]/20">
                 <h4 class="text-xs font-bold uppercase text-[var(--accent)] mb-2">Performance Metrics</h4>
@@ -641,6 +645,128 @@
         </div>
     </div>
 
+    <!-- ===== SOFTWARE MODALS (detailed) ===== -->
+
+    <!-- Basket -->
+    <div id="basket-modal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="modal-content w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6">
+            <div class="flex justify-between items-center border-b border-[var(--border-light)] pb-4 mb-4">
+                <h3 class="text-xl font-bold text-[var(--text-primary)]">Make Your Basket — MERN Stack</h3>
+                <button onclick="closeModal('basket-modal')" class="text-[var(--text-muted)] hover:text-[var(--text-primary)] text-2xl leading-none">&times;</button>
+            </div>
+            <ul class="text-sm text-[var(--text-secondary)] space-y-2 list-disc list-inside">
+                <li>Built scalable e-commerce with React.js, Node.js, MySQL.</li>
+                <li>JWT authentication for role-based access (user/admin).</li>
+                <li>Stripe API integration — reduced transaction failure by 30%.</li>
+                <li>98% basket completion rate via optimized UI/UX.</li>
+                <li>Handled 2000+ user profiles & 50 orders/min peak load.</li>
+                <li>Ensured 100% data consistency across profiles, orders, catalogs.</li>
+            </ul>
+            <div class="mt-4 flex gap-3">
+                <a href="https://e-commeerse.vercel.app/" target="_blank" class="btn-primary text-xs">Live Demo</a>
+                <a href="https://github.com/Abhigit2504" target="_blank" class="btn-outline text-xs"><i class="fab fa-github"></i> Source</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JobDone -->
+    <div id="jobdone-modal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="modal-content w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6">
+            <div class="flex justify-between items-center border-b border-[var(--border-light)] pb-4 mb-4">
+                <h3 class="text-xl font-bold text-[var(--text-primary)]">JobDone — MERN Stack</h3>
+                <button onclick="closeModal('jobdone-modal')" class="text-[var(--text-muted)] hover:text-[var(--text-primary)] text-2xl leading-none">&times;</button>
+            </div>
+            <ul class="text-sm text-[var(--text-secondary)] space-y-2 list-disc list-inside">
+                <li>Full-stack job portal with user dashboards, job listings, resume uploads.</li>
+                <li>RESTful APIs with 90% functional accuracy for job posts & applications.</li>
+                <li>Implemented CORS and centralized error handling.</li>
+                <li>Real-time updates with schema validation using MongoDB & Express.</li>
+                <li>Role-based access for job seekers and employers.</li>
+            </ul>
+            <div class="mt-4 flex gap-3">
+                <a href="https://job-done-rkn4.vercel.app/" target="_blank" class="btn-primary text-xs">Live Demo</a>
+                <a href="https://github.com/Abhigit2504" target="_blank" class="btn-outline text-xs"><i class="fab fa-github"></i> Source</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Heavy Machinery -->
+    <div id="machinery-modal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="modal-content w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6">
+            <div class="flex justify-between items-center border-b border-[var(--border-light)] pb-4 mb-4">
+                <h3 class="text-xl font-bold text-[var(--text-primary)]">Heavy Machinery Monitor</h3>
+                <button onclick="closeModal('machinery-modal')" class="text-[var(--text-muted)] hover:text-[var(--text-primary)] text-2xl leading-none">&times;</button>
+            </div>
+            <ul class="text-sm text-[var(--text-secondary)] space-y-2 list-disc list-inside">
+                <li>Real-time industrial monitoring app using React Native & Django.</li>
+                <li>99% data accuracy via API polling & JSON feeds with PostgreSQL.</li>
+                <li>Animated dashboards for voltage, temperature, efficiency.</li>
+                <li>Threshold-based alerts for proactive maintenance.</li>
+                <li>Cross-platform data consistency with optimized backend.</li>
+            </ul>
+            <div class="mt-4 flex gap-3">
+                <a href="https://github.com/Abhigit2504" target="_blank" class="btn-outline text-xs"><i class="fab fa-github"></i> Source Code</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- sEMG -->
+    <div id="semg-modal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="modal-content w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6">
+            <div class="flex justify-between items-center border-b border-[var(--border-light)] pb-4 mb-4">
+                <h3 class="text-xl font-bold text-[var(--text-primary)]">sEMG Gesture Controller</h3>
+                <button onclick="closeModal('semg-modal')" class="text-[var(--text-muted)] hover:text-[var(--text-primary)] text-2xl leading-none">&times;</button>
+            </div>
+            <ul class="text-sm text-[var(--text-secondary)] space-y-2 list-disc list-inside">
+                <li>Gesture-controlled IoT interface using sEMG sensors.</li>
+                <li>95% accuracy in muscle signal classification.</li>
+                <li>Signal processing algorithms for real-time command conversion.</li>
+                <li>Developed within 6 months for smart device automation.</li>
+            </ul>
+            <div class="mt-4 flex gap-3">
+                <a href="https://github.com/Abhigit2504" target="_blank" class="btn-outline text-xs"><i class="fab fa-github"></i> Source Code</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Water -->
+    <div id="water-modal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="modal-content w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6">
+            <div class="flex justify-between items-center border-b border-[var(--border-light)] pb-4 mb-4">
+                <h3 class="text-xl font-bold text-[var(--text-primary)]">Water Quality Tracker</h3>
+                <button onclick="closeModal('water-modal')" class="text-[var(--text-muted)] hover:text-[var(--text-primary)] text-2xl leading-none">&times;</button>
+            </div>
+            <ul class="text-sm text-[var(--text-secondary)] space-y-2 list-disc list-inside">
+                <li>Real-time IoT system monitoring pH, turbidity, dissolved oxygen.</li>
+                <li>I2C protocol for efficient multi-sensor data integration.</li>
+                <li>20% reduction in water waste via sensor-driven automation.</li>
+                <li>Wi-Fi/Bluetooth alerts for proactive management.</li>
+            </ul>
+            <div class="mt-4 flex gap-3">
+                <a href="https://github.com/Abhigit2504" target="_blank" class="btn-outline text-xs"><i class="fab fa-github"></i> Source Code</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blood -->
+    <div id="blood-modal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="modal-content w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6">
+            <div class="flex justify-between items-center border-b border-[var(--border-light)] pb-4 mb-4">
+                <h3 class="text-xl font-bold text-[var(--text-primary)]">Blood Donation System</h3>
+                <button onclick="closeModal('blood-modal')" class="text-[var(--text-muted)] hover:text-[var(--text-primary)] text-2xl leading-none">&times;</button>
+            </div>
+            <ul class="text-sm text-[var(--text-secondary)] space-y-2 list-disc list-inside">
+                <li>CLI-based system using object-oriented design (donor, patient, admin).</li>
+                <li>Secure data handling via file streams.</li>
+                <li>Interactive menus for donor registration, patient requests, admin reports.</li>
+                <li>90% satisfaction rating in internal testing.</li>
+            </ul>
+            <div class="mt-4 flex gap-3">
+                <a href="https://github.com/Abhigit2504" target="_blank" class="btn-outline text-xs"><i class="fab fa-github"></i> Source Code</a>
+            </div>
+        </div>
+    </div>
+
     <!-- FOOTER -->
     <footer class="border-t border-[var(--border-light)] py-8 text-center text-sm text-[var(--text-muted)] font-mono tracking-wider">
         <div class="max-w-6xl mx-auto px-4 space-y-1">
@@ -649,7 +775,6 @@
         </div>
     </footer>
 
-    <!-- SCRIPTS -->
     <script>
         // Modal
         function openModal(id) {
@@ -661,11 +786,10 @@
             document.body.style.overflow = '';
         }
 
-        // Theme toggle
+        // Theme
         const toggle = document.getElementById('theme-toggle');
         const icon = document.getElementById('theme-icon');
         const html = document.documentElement;
-
         let theme = localStorage.getItem('theme') || 'dark';
         if (theme === 'light') {
             html.classList.remove('dark');
@@ -676,7 +800,6 @@
             icon.classList.remove('fa-sun');
             icon.classList.add('fa-moon');
         }
-
         toggle.addEventListener('click', () => {
             if (html.classList.contains('dark')) {
                 html.classList.remove('dark');
